@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function PupilPage({ params }: { params: { id: string } }) {
   const [problem, setProblem] = useState(0);
@@ -16,13 +16,20 @@ export default function PupilPage({ params }: { params: { id: string } }) {
     },
   ];
 
+  function correctAnswer(e: FormEvent) {
+    e.preventDefault();
+    if (e.target.answer.value == mockProblems[problem].solution) {
+      return setProblem(problem + 1);
+    }
+  }
+
   return (
     <>
       <h1>{params.id}</h1>
       <h2>Questions</h2>
       <p>{mockProblems[problem].problem}</p>
-      <form action="">
-        <input type="number" placeholder="Answer" />
+      <form onSubmit={(e) => correctAnswer(e)}>
+        <input name="answer" type="number" placeholder="Answer" />
         <button type="submit">Check</button>
       </form>
     </>
