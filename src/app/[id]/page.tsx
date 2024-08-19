@@ -16,7 +16,7 @@ export default function PupilPage({ params }: { params: { id: string } }) {
     },
   ];
 
-  function correctAnswer(e: FormEvent) {
+  function correctAnswer(e: any) {
     e.preventDefault();
     if (e.target.answer.value == mockProblems[problem].solution) {
       return setProblem(problem + 1);
@@ -24,14 +24,24 @@ export default function PupilPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <>
+    <div className="w-full flex flex-col items-center">
       <h1>{params.id}</h1>
       <h2>Questions</h2>
-      <p>{mockProblems[problem].problem}</p>
-      <form onSubmit={(e) => correctAnswer(e)}>
-        <input name="answer" type="number" placeholder="Answer" />
-        <button type="submit">Check</button>
+      <p className="text-lg">{mockProblems[problem].problem}</p>
+      <form onSubmit={(e) => correctAnswer(e)} className="flex gap-2">
+        <input
+          name="answer"
+          type="number"
+          placeholder="Answer"
+          className="border border-black rounded-md p-2"
+        />
+        <button
+          type="submit"
+          className="bg-slate-700 text-white hover:bg-slate-600 p-2 rounded-md"
+        >
+          Check
+        </button>
       </form>
-    </>
+    </div>
   );
 }
