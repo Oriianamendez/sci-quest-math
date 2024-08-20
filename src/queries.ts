@@ -39,6 +39,10 @@ export async function getPupils() {
   return await mockPupils;
 }
 
+export async function addPupil(name: string) {
+  await mockPupils.push({ id: mockPupils.length + 1, name: name, points: 0 });
+}
+
 export async function getProblems() {
   return await mockProblems;
 }

@@ -1,5 +1,5 @@
 "use server";
-import { getPupilsAction } from "@/actions";
+import { addPupilAction, getPupilsAction } from "@/actions";
 
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
@@ -22,8 +22,8 @@ export default async function Dashboard() {
           ))}
         </tbody>
       </table>
-      <form action="">
-        <input type="text" placeholder="Pupils name" />
+      <form action={addPupilAction}>
+        <input name="pupil" type="text" placeholder="Pupils name" />
         <button>Add</button>
       </form>
     </>
