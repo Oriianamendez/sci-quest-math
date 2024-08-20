@@ -1,7 +1,7 @@
-"use server";
 import { addPupilAction, getPupilsAction } from "@/actions";
-import { Main } from "../_components/main";
+import { HelpCounter } from "../_components/help-counter";
 
+export const revalidate = 5;
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
 
@@ -12,6 +12,7 @@ export default async function Dashboard() {
           <tr>
             <th>Name</th>
             <th>Points</th>
+            <th>Help</th>
           </tr>
         </thead>
         <tbody>
@@ -19,6 +20,9 @@ export default async function Dashboard() {
             <tr key={pupil.id}>
               <td>{pupil.name}</td>
               <td>{pupil.points}</td>
+              <td>
+                {pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}
+              </td>
             </tr>
           ))}
         </tbody>
