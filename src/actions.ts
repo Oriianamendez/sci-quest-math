@@ -6,6 +6,7 @@ import {
   getProblems,
   getPupilById,
   getPupils,
+  pupilHelp,
   updatePupil,
 } from "./queries";
 
@@ -21,6 +22,12 @@ export async function updatePupilAction(id: string, points: number) {
   revalidatePath("/dashboard");
   revalidatePath(`/${id}`);
   return await updatePupil(id, points);
+}
+
+export async function pupilHelpAction(id: string) {
+  await pupilHelp(id);
+  revalidatePath("/dashboard");
+  revalidatePath(`/${id}`);
 }
 
 export async function getProblemsAction() {

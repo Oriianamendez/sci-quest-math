@@ -8,6 +8,13 @@ const url = process.env.POSTGRES_URL as string;
 const client = postgres(url);
 export const db = drizzle(client, { schema, logger: true });
 
+type Pupil = {
+  id: string;
+  name: string;
+  points: number;
+  help: number;
+};
+
 const mockProblems = [
   {
     problem: "1 + 1",
@@ -18,21 +25,24 @@ const mockProblems = [
     solution: 4,
   },
 ];
-const mockPupils = [
+const mockPupils: Pupil[] = [
   {
     id: "1",
     name: "Harald",
-    points: 3,
+    points: 1,
+    help: 0,
   },
   {
     id: "2",
     name: "Lukas",
     points: 3,
+    help: 0,
   },
   {
     id: "3",
     name: "Oriana",
     points: 3,
+    help: 0,
   },
 ];
 
@@ -52,12 +62,19 @@ export async function updatePupil(id: string, points: number) {
 
   return mockPupils[index];
 }
+export async function pupilHelp(id: string) {
+  let index = mockPupils.findIndex((pupil) => pupil.id == id);
+  mockPupils[index] = { ...mockPupils[index], help: Number(new Date()) };
+
+  return mockPupils[index];
+}
 
 export async function addPupil(name: string) {
   await mockPupils.push({
     id: (mockPupils.length + 1).toString(),
     name: name,
     points: 0,
+    help: 0,
   });
 }
 

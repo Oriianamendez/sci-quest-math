@@ -4,6 +4,7 @@ import { Main } from "../_components/main";
 
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
+  console.log(pupils);
 
   return (
     <main className="flex flex-col w-full items-center">
@@ -12,6 +13,7 @@ export default async function Dashboard() {
           <tr>
             <th>Name</th>
             <th>Points</th>
+            <th>Help</th>
           </tr>
         </thead>
         <tbody>
@@ -19,6 +21,7 @@ export default async function Dashboard() {
             <tr key={pupil.id}>
               <td>{pupil.name}</td>
               <td>{pupil.points}</td>
+              <td>{pupil.help == 0 ? "" : "HELP"}</td>
             </tr>
           ))}
         </tbody>
