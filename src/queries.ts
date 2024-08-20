@@ -12,14 +12,31 @@ const mockProblems = [
     solution: 4,
   },
 ];
-
+const mockPupils = [
+  {
+    id: 1,
+    name: "Harald",
+    points: 3,
+  },
+  {
+    id: 2,
+    name: "Lukas",
+    points: 3,
+  },
+  {
+    id: 3,
+    name: "Oriana",
+    points: 3,
+  },
+];
 const url = process.env.POSTGRES_URL as string;
 
 const client = postgres(url);
 export const db = drizzle(client, { schema, logger: true });
 
 export async function getPupils() {
-  return await db.query.pupils.findMany();
+  //return await db.query.pupils.findMany();
+  return await mockPupils;
 }
 
 export async function getProblems() {

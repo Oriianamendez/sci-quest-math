@@ -1,21 +1,8 @@
-export default function Dashboard() {
-  const mockPupils = [
-    {
-      id: 1,
-      name: "Harald",
-      points: 3,
-    },
-    {
-      id: 2,
-      name: "Lukas",
-      points: 3,
-    },
-    {
-      id: 3,
-      name: "Oriana",
-      points: 3,
-    },
-  ];
+"use server";
+import { getPupilsAction } from "@/actions";
+
+export default async function Dashboard() {
+  const pupils = await getPupilsAction();
 
   return (
     <>
@@ -24,11 +11,10 @@ export default function Dashboard() {
           <tr>
             <th>Name</th>
             <th>Points</th>
-            <th>Help</th>
           </tr>
         </thead>
         <tbody>
-          {mockPupils.map((pupil) => (
+          {pupils.map((pupil) => (
             <tr key={pupil.id}>
               <td>{pupil.name}</td>
               <td>{pupil.points}</td>
