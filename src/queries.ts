@@ -17,13 +17,11 @@ type Pupil = {
 
 const mockProblems = [
   {
+    id: "1",
     problem: "1 + 1",
     solution: 2,
   },
-  {
-    problem: "2 + 2",
-    solution: 4,
-  },
+  { id: "2", problem: "2 + 2", solution: 4 },
 ];
 const mockPupils: Pupil[] = [
   {
