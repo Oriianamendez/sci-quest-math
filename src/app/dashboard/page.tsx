@@ -1,10 +1,15 @@
 "use server";
 import { addPupilAction, getPupilsAction } from "@/actions";
 import { Main } from "../_components/main";
+import { HelpCounter } from "../_components/help-counter";
 
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
-  console.log(pupils);
+
+  // function helpCounter(help: number) {
+  //   const time = new Date(Number(new Date()) - help);
+  //   return time.getMinutes() + ":" + time.getSeconds();
+  // }
 
   return (
     <main className="flex flex-col w-full items-center">
@@ -21,7 +26,9 @@ export default async function Dashboard() {
             <tr key={pupil.id}>
               <td>{pupil.name}</td>
               <td>{pupil.points}</td>
-              <td>{pupil.help == 0 ? "" : "HELP"}</td>
+              <td>
+                {pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}
+              </td>
             </tr>
           ))}
         </tbody>

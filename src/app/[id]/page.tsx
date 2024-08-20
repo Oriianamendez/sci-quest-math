@@ -4,7 +4,7 @@ import { getProblemsAction, pupilHelpAction } from "@/actions";
 import { Problem } from "../_components/problem";
 import { getPupilById } from "@/queries";
 import { redirect } from "next/navigation";
-import { Help } from "../_components/help";
+import { Help } from "../_components/helpButton";
 
 export default async function PupilPage({
   params,
