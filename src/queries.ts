@@ -62,7 +62,7 @@ export async function updatePupil(id: string, points: number) {
 
   return mockPupils[index];
 }
-export async function pupilHelp(id: string) {
+export async function upDateHelpTimeStamp(id: string) {
   let index = mockPupils.findIndex((pupil) => pupil.id == id);
   mockPupils[index] = { ...mockPupils[index], help: Number(new Date()) };
 

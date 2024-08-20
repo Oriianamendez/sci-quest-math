@@ -6,7 +6,7 @@ import {
   getProblems,
   getPupilById,
   getPupils,
-  pupilHelp,
+  upDateHelpTimeStamp,
   updatePupil,
 } from "./queries";
 
@@ -25,7 +25,7 @@ export async function updatePupilAction(id: string, points: number) {
 }
 
 export async function pupilHelpAction(id: string) {
-  await pupilHelp(id);
+  await upDateHelpTimeStamp(id);
   revalidatePath("/dashboard");
   revalidatePath(`/${id}`);
 }

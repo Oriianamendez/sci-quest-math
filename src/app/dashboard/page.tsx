@@ -6,11 +6,6 @@ import { HelpCounter } from "../_components/help-counter";
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
 
-  // function helpCounter(help: number) {
-  //   const time = new Date(Number(new Date()) - help);
-  //   return time.getMinutes() + ":" + time.getSeconds();
-  // }
-
   return (
     <main className="flex flex-col w-full items-center">
       <table className="p-4 w-2/5">

@@ -1,6 +1,6 @@
 "use server";
 
-import { getProblemsAction, pupilHelpAction } from "@/actions";
+import { getProblemsAction } from "@/actions";
 import { Problem } from "../_components/problem";
 import { getPupilById } from "@/queries";
 import { redirect } from "next/navigation";
