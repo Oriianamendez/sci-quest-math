@@ -1,8 +1,7 @@
-"use server";
 import { addPupilAction, getPupilsAction } from "@/actions";
-import { Main } from "../_components/main";
 import { HelpCounter } from "../_components/help-counter";
 
+export const revalidate = 5;
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
 
