@@ -1,21 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { updatePupilAction } from "@/actions";
 
-export function Problem({ problems }: { problems: any }) {
-  const [problem, setProblem] = useState(0);
-
-  function correctAnswer(e: any) {
-    e.preventDefault();
-    if (e.target.answer.value == problems[problem].solution) {
-      return setProblem(problem + 1);
+export function Problem({ problems, pupil }: { problems: any; pupil: any }) {
+  function correctAnswer(formData: FormData) {
+    if ((formData.get("answer") as string) == problems[pupil.points].solution) {
+      return updatePupilAction(pupil.id, pupil.points + 1);
     }
   }
 
   return (
     <>
-      <p className="text-lg">{problems[problem].problem}</p>
-      <form onSubmit={(e) => correctAnswer(e)} className="flex gap-2">
+      <p className="text-lg">{problems[pupil.points].problem}</p>
+      <form action={correctAnswer} className="flex gap-2">
         <input
           name="answer"
           type="number"
