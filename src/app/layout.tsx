@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} prose`}>{children}</body>
+      <body className={`${inter.className} prose max-w-full`}>{children}</body>
     </html>
   );
 }
