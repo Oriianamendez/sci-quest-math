@@ -2,7 +2,7 @@
 
 import { updatePupilAction } from "@/actions";
 
-export function Problem({ problems, pupil }: { problems: any; pupil: any }) {
+export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   function correctAnswer(formData: FormData) {
     if ((formData.get("answer") as string) == problems[pupil.points].solution) {
       return updatePupilAction(pupil.id, pupil.points + 1);
@@ -11,7 +11,7 @@ export function Problem({ problems, pupil }: { problems: any; pupil: any }) {
 
   return (
     <>
-      <p className="text-lg">{problems[pupil.points].problem}</p>
+      <p className="text-lg">{problems[0].problem}</p>
       <form action={correctAnswer} className="flex gap-2">
         <input
           name="answer"

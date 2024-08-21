@@ -24,8 +24,8 @@ const mockProblems = [
   { id: "2", categoryId: "1", problem: "2 + 2", solution: 4 },
   { id: "3", categoryId: "1", problem: "3 + 3", solution: 6 },
   { id: "4", categoryId: "2", problem: "4 - 2", solution: 2 },
-  { id: "5", categoryId: "3", problem: "10 - 4", solution: 6 },
-  { id: "6", categoryId: "4", problem: "8 - 4", solution: 4 },
+  { id: "5", categoryId: "2", problem: "10 - 4", solution: 6 },
+  { id: "6", categoryId: "2", problem: "8 - 4", solution: 4 },
   {
     id: "7",
     categoryId: "3",
@@ -122,6 +122,6 @@ export async function addPupil(name: string) {
   });
 }
 
-export async function getProblems() {
-  return await mockProblems;
+export async function getProblemsByCategory(id: string) {
+  return await mockProblems.filter((problem) => problem.categoryId == id);
 }

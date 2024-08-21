@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import {
   addPupil,
-  getProblems,
+  getProblemsByCategory,
   getPupilById,
   getPupils,
   updateHelpTimestamp,
@@ -30,8 +30,8 @@ export async function pupilHelpAction(id: string) {
   revalidatePath(`/${id}`);
 }
 
-export async function getProblemsAction() {
-  return await getProblems();
+export async function getProblemsByCategoryAction(id: string) {
+  return await getProblemsByCategory(id);
 }
 
 export async function addPupilAction(formData: FormData) {
