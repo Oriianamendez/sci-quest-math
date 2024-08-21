@@ -3,6 +3,8 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { HelpCounter } from "./help-counter";
 
 export function PupilRow({ pupil }: { pupil: any }) {
+  if (!window) return <></>;
+
   return (
     <tr>
       <td className="flex flex-row gap-2 items-center">
@@ -11,7 +13,7 @@ export function PupilRow({ pupil }: { pupil: any }) {
           className="flex justify-center size-6 items-center text-sm p-2 rounded-full bg-neutral-100   hover:bg-neutral-50 "
           onClick={() =>
             navigator.clipboard.writeText(
-              `${window.location.origin}/${pupil.id}`,
+              `${window.location.origin}/${pupil.id}`
             )
           }
         >

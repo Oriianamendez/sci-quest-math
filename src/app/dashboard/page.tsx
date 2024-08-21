@@ -4,7 +4,7 @@ import { PupilRow } from "../_components/pupil-row";
 export const revalidate = 5;
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
-
+  if (!window) return <></>;
   return (
     <main className="flex flex-col w-full items-center p-8 bg-sky-100">
       <table className="p-4 w-2/5">
