@@ -4,8 +4,9 @@ import { getProblemsAction } from "@/actions";
 import { Problem } from "../_components/problem";
 import { getPupilById } from "@/queries";
 import { redirect } from "next/navigation";
-import { Help } from "../_components/helpButton";
+import { HelpButton } from "../_components/help-button";
 import { PointsBar } from "../_components/points-bar";
+import { CategoryMenu } from "../_components/category-menu";
 
 export default async function PupilPage({
   params,
@@ -17,12 +18,16 @@ export default async function PupilPage({
   const problems = await getProblemsAction();
 
   return (
-    <div className="w-full flex flex-col items-center">
-      <h2>{pupil.name}</h2>
+    <div className="w-full flex flex-row justify-center gap-8 p-4">
+      <div className="flex flex-col items-center">
+        <h2>{pupil.name}</h2>
 
-      <Help id={params.id} />
-      <PointsBar points={pupil.points} problems={problems} />
-      <Problem problems={problems} pupil={pupil} />
+        <HelpButton id={params.id} />
+        <PointsBar points={pupil.points} problems={problems} />
+        <Problem problems={problems} pupil={pupil} />
+      </div>
+
+      <CategoryMenu />
     </div>
   );
 }

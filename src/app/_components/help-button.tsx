@@ -3,7 +3,7 @@
 import { pupilHelpAction } from "@/actions";
 import Image from "next/image";
 
-export function Help({ id }: { id: string }) {
+export function HelpButton({ id }: { id: string }) {
   return (
     <button onClick={() => pupilHelpAction(id)}>
       <Image
