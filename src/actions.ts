@@ -18,10 +18,10 @@ export async function getPupilByIdAction(id: string) {
   return await getPupilById(id);
 }
 
-export async function updatePupilAction(id: string, points: number) {
+export async function updatePupilAction(id: string, problemId: string) {
   revalidatePath("/dashboard");
   revalidatePath(`/${id}`);
-  return await updatePupil(id, points);
+  return await updatePupil(id, problemId);
 }
 
 export async function pupilHelpAction(id: string) {

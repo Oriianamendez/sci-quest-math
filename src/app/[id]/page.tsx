@@ -25,7 +25,7 @@ export default async function PupilPage({
         <h2>{pupil.name}</h2>
 
         <HelpButton id={params.id} />
-        <PointsBar points={pupil.points} problems={problems} />
+        <PointsBar answers={pupil.answers} problems={problems} />
         <Problem problems={problems} pupil={pupil} />
       </div>
 

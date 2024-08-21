@@ -2,15 +2,15 @@ import CheckIcon from "@mui/icons-material/Check";
 
 export function PointsBar({
   problems,
-  points,
+  answers,
 }: {
   problems: any[];
-  points: number;
+  answers: string[];
 }) {
   return (
     <div className="flex gap-1 items-center">
-      {problems.map((problem, i) =>
-        Number(points) > i ? (
+      {problems.map((problem) =>
+        answers.includes(problem.id) ? (
           <div
             key={problem.id}
             className="bg-emerald-600 text-white rounded-full size-6 flex items-center"
@@ -25,7 +25,7 @@ export function PointsBar({
         ),
       )}
       <div className="text-3xl bg-emerald-600 text-white size-10 rounded-full flex items-center justify-center">
-        {points}
+        {answers.length}
       </div>
     </div>
   );

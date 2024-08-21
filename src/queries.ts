@@ -10,8 +10,8 @@ export const db = drizzle(client, { schema, logger: true });
 type Pupil = {
   id: string;
   name: string;
-  points: number;
   help: number;
+  answers: string[];
 };
 
 const mockProblems = [
@@ -73,20 +73,20 @@ const mockPupils: Pupil[] = [
   {
     id: "1",
     name: "Harald",
-    points: 1,
     help: 0,
+    answers: ["1", "2", "3", "4"],
   },
   {
     id: "2",
     name: "Lukas",
-    points: 3,
     help: 0,
+    answers: [],
   },
   {
     id: "3",
     name: "Oriana",
-    points: 3,
     help: 0,
+    answers: [],
   },
 ];
 
@@ -100,9 +100,9 @@ export async function getPupilById(id: string) {
   return await mockPupils.find((pupil) => pupil.id == id);
 }
 
-export async function updatePupil(id: string, points: number) {
+export async function updatePupil(id: string, problemId: string) {
   let index = mockPupils.findIndex((pupil) => pupil.id == id);
-  mockPupils[index] = { ...mockPupils[index], points: points };
+  mockPupils[index].answers.push(problemId);
 
   return mockPupils[index];
 }
@@ -117,8 +117,8 @@ export async function addPupil(name: string) {
   await mockPupils.push({
     id: (mockPupils.length + 1).toString(),
     name: name,
-    points: 0,
     help: 0,
+    answers: [],
   });
 }
 
