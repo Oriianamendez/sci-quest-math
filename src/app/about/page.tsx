@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function About() {
   return (
     <Main>
-      <nav className="px-4 flex justify-between">
+      <nav className="px-4 flex justify-between align-middle">
         <Image
           className="m-0 size-10"
           src="/logo.png"
@@ -15,7 +15,10 @@ export default function About() {
           height={40}
           alt=""
         />
-        <Link href={"/dashboard"} className="border bg-sky-300 rounded-md p-2">
+        <Link
+          href={"/dashboard"}
+          className="border bg-sky-300 rounded-md p-2 no-underline"
+        >
           Teacher
         </Link>
       </nav>
@@ -40,9 +43,9 @@ export default function About() {
           />
         </div>
       </header>
-      <article className="text-justify md:flex md:justify-evenly">
-        <section className="bg-sky-200 p-4 md:w-1/3">
-          <h2 className="mt-4">For teacher</h2>
+      <article className="text-justify md:flex md:justify-evenly ">
+        <section className="bg-sky-200 p-4 md:w-1/3 md:px-8 text-sky-950">
+          <h2 className="mt-4 md:text-3xl text-sky-950">For teacher 🧑🏼‍🏫</h2>
           <p>
             Our app empowers teachers with easy-to-use management tools.
             Teachers can effortlessly add students to the platform, track their
@@ -52,8 +55,8 @@ export default function About() {
             struggling, ensuring that no one falls behind.
           </p>
         </section>
-        <section className="bg-sky-100 p-4 md:w-1/3">
-          <h2 className="mt-4">In the classroom</h2>
+        <section className="bg-sky-100 p-4 md:w-1/3 md:px-8 text-sky-950">
+          <h2 className="mt-4 md:text-3xl text-sky-950">In the classroom 🎒</h2>
           <p>
             Our Math Practice App is designed to be a seamless addition to the
             classroom environment. Whether it's during individual study time or
@@ -62,8 +65,8 @@ export default function About() {
             learning math both fun and rewarding.
           </p>
         </section>
-        <section className="bg-sky-200 p-4 md:w-1/3">
-          <h2 className="mt-4">For students</h2>
+        <section className="bg-sky-200 p-4 md:w-1/3 md:px-8 text-sky-950">
+          <h2 className="mt-4 md:text-3xl text-sky-950">For students 👦🏽👧🏻</h2>
           <p>
             Students are provided with an interactive and enjoyable way to
             practice math. As they solve the questions, the app keeps track of
@@ -73,8 +76,8 @@ export default function About() {
           </p>
         </section>
       </article>
-      <footer className="text-justify p-4">
-        <p>
+      <footer className="text-center flex justify-center p-4">
+        <p className="rounded-sm border boder-sky w-4/6 p-4 bg-sky-100">
           We believe that with the right tools, learning math can be an
           enjoyable journey. Our app is here to make that possible by providing
           an interactive, supportive, and efficient learning platform for first
