@@ -1,6 +1,5 @@
 import { addPupilAction, getPupilsAction } from "@/actions";
-import { HelpCounter } from "../_components/help-counter";
-import Link from "next/link";
+import { PupilRow } from "../_components/pupil-row";
 
 export const revalidate = 5;
 export default async function Dashboard() {
@@ -18,17 +17,7 @@ export default async function Dashboard() {
         </thead>
         <tbody className="text-lg">
           {pupils.map((pupil) => (
-            <tr key={pupil.id}>
-              <td>
-                <Link href={""} className="no-underline">
-                  {pupil.name}
-                </Link>
-              </td>
-              <td>{pupil.answers.length}</td>
-              <td>
-                {pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}
-              </td>
-            </tr>
+            <PupilRow pupil={pupil} key={pupil.id} />
           ))}
         </tbody>
       </table>

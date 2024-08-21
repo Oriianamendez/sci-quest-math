@@ -1,8 +1,8 @@
 "use client";
-import { Rubik_Bubbles } from "next/font/google";
+import { Concert_One } from "next/font/google";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const rubik = Rubik_Bubbles({ weight: ["400"], subsets: ["latin"] });
+const concert = Concert_One({ weight: ["400"], subsets: ["latin"] });
 export function CategoryMenu() {
   const searchParams = useSearchParams();
   const pathName = usePathname();
@@ -15,7 +15,7 @@ export function CategoryMenu() {
 
   return (
     <aside
-      className={`${rubik.className} flex flex-col text-5xl gap-8 text-white`}
+      className={`${concert.className} flex flex-col text-7xl gap-8 text-white`}
     >
       <button
         className="bg-sky-300 size-20 flex items-center justify-center rounded-lg"
