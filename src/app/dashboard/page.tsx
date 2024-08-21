@@ -6,20 +6,20 @@ export default async function Dashboard() {
   const pupils = await getPupilsAction();
 
   return (
-    <main className="flex flex-col w-full items-center">
+    <main className="flex flex-col w-full items-center p-8 bg-sky-100">
       <table className="p-4 w-2/5">
-        <thead>
+        <thead className="text-xl">
           <tr>
             <th>Name</th>
             <th>Points</th>
             <th>Help</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-lg">
           {pupils.map((pupil) => (
             <tr key={pupil.id}>
               <td>{pupil.name}</td>
-              <td>{pupil.points}</td>
+              <td>{pupil.answers.length}</td>
               <td>
                 {pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}
               </td>
@@ -27,14 +27,16 @@ export default async function Dashboard() {
           ))}
         </tbody>
       </table>
-      <form className="flex items-center gap-4 w-fit" action={addPupilAction}>
+      <form className="flex gap-4 w-fit" action={addPupilAction}>
         <input
-          className="border border-black rounded-md p-2"
+          className="border border-sky-400 rounded-md p-2"
           name="pupil"
           type="text"
           placeholder="Pupils name"
         />
-        <button className="border border-black rounded-md p-2">Add</button>
+        <button className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200">
+          Add
+        </button>
       </form>
     </main>
   );

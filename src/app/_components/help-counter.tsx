@@ -14,7 +14,10 @@ export function HelpCounter({ help }: { help: number }) {
   const waitedTime = new Date(Number(time) - help);
 
   return (
-    <div suppressHydrationWarning>
+    <div
+      className="bg-red-400 rounded-md p-2 text-white"
+      suppressHydrationWarning
+    >
       {" "}
       {waitedTime.getMinutes() + ":" + waitedTime.getSeconds()}
     </div>
