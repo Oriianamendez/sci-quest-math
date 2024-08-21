@@ -8,10 +8,10 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
       return updatePupilAction(pupil.id, pupil.points + 1);
     }
   }
-
+  if (pupil.points >= problems.length) return <p>Finished.</p>;
   return (
     <>
-      <p className="text-lg">{problems[0].problem}</p>
+      <p className="text-lg">{problems[pupil.points].problem}</p>
       <form action={correctAnswer} className="flex gap-2">
         <input
           name="answer"

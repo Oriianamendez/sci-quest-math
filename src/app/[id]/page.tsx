@@ -4,7 +4,7 @@ import { getProblemsByCategoryAction, getPupilByIdAction } from "@/actions";
 import { Problem } from "../_components/problem";
 import { redirect } from "next/navigation";
 import { HelpButton } from "../_components/help-button";
-// import { PointsBar } from "../_components/points-bar";
+import { PointsBar } from "../_components/points-bar";
 import { CategoryMenu } from "../_components/category-menu";
 
 export default async function PupilPage({
@@ -25,7 +25,7 @@ export default async function PupilPage({
         <h2>{pupil.name}</h2>
 
         <HelpButton id={params.id} />
-        {/* <PointsBar points={pupil.points} problems={problems} /> */}
+        <PointsBar points={pupil.points} problems={problems} />
         <Problem problems={problems} pupil={pupil} />
       </div>
 
