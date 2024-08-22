@@ -1,10 +1,18 @@
 import { addPupilAction, getPupilsAction } from "@/actions";
 import { PupilRow } from "../_components/pupil-row";
+import { Pupil } from "@/types";
 
 export const revalidate = 5;
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
-  if (!window) return <></>;
+
+  pupils.sort((a: Pupil, b: Pupil) => {
+    if (a.help == 0) return 1;
+    if (b.help == 0) return -1;
+
+    return a.help - b.help;
+  });
+
   return (
     <main className="flex flex-col w-full items-center p-8 bg-sky-100">
       <table className="p-4 w-2/5">

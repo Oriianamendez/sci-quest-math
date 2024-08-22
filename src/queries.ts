@@ -1,18 +1,12 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import * as schema from "./schema";
+import { Pupil } from "./types";
 
 const url = process.env.POSTGRES_URL as string;
 
 const client = postgres(url);
 export const db = drizzle(client, { schema, logger: true });
-
-type Pupil = {
-  id: string;
-  name: string;
-  help: number;
-  answers: string[];
-};
 
 const mockProblems = [
   {
