@@ -24,8 +24,8 @@ export async function updatePupilAction(id: string, problemId: string) {
   return await updatePupil(id, problemId);
 }
 
-export async function pupilHelpAction(id: string) {
-  await updateHelpTimestamp(id);
+export async function pupilHelpAction(id: string, help: number) {
+  await updateHelpTimestamp(id, help);
   revalidatePath("/dashboard");
   revalidatePath(`/${id}`);
 }

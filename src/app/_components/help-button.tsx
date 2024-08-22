@@ -3,9 +3,9 @@
 import { pupilHelpAction } from "@/actions";
 import Image from "next/image";
 
-export function HelpButton({ id }: { id: string }) {
+export function HelpButton({ id, help }: { id: string; help: number }) {
   return (
-    <button onClick={() => pupilHelpAction(id)}>
+    <button onClick={() => pupilHelpAction(id, help)}>
       <Image
         className="m-0"
         src="/help.png"

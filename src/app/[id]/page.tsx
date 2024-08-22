@@ -24,7 +24,7 @@ export default async function PupilPage({
       <div className="flex flex-col items-center">
         <h2>{pupil.name}</h2>
 
-        <HelpButton id={params.id} />
+        <HelpButton id={params.id} help={pupil.help} />
         <PointsBar answers={pupil.answers} problems={problems} />
         <Problem problems={problems} pupil={pupil} />
       </div>

@@ -100,9 +100,12 @@ export async function updatePupil(id: string, problemId: string) {
 
   return mockPupils[index];
 }
-export async function updateHelpTimestamp(id: string) {
+export async function updateHelpTimestamp(id: string, help: number) {
   let index = mockPupils.findIndex((pupil) => pupil.id == id);
-  mockPupils[index] = { ...mockPupils[index], help: Number(new Date()) };
+  mockPupils[index] = {
+    ...mockPupils[index],
+    help: help == 0 ? Number(new Date()) : 0,
+  };
 
   return mockPupils[index];
 }
