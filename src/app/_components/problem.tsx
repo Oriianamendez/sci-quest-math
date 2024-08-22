@@ -26,7 +26,7 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
 
   return (
     <>
-      <p className="text-justify text-black font-extrabold text-2xl lg:text-4-xl">
+      <p className="text-justify text-black font-extrabold text-2xl py-8 lg:text-4-xl">
         {currentProblem.problem}
       </p>
       <form

@@ -15,7 +15,9 @@ export function CategoryMenu() {
   }
 
   return (
-    <aside className={`${concert.className} flex flex-col text-7xl gap-8 p-4`}>
+    <aside
+      className={`${concert.className} flex flex-col text-7xl gap-8 p-4 pt-6`}
+    >
       <button
         className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("1")}

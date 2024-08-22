@@ -5,13 +5,16 @@ import Image from "next/image";
 
 export function HelpButton({ id, help }: { id: string; help: number }) {
   return (
-    <button onClick={() => pupilHelpAction(id, help)}>
+    <button
+      className="rounded-full p-4 bg-red-700 hover:bg-green-500"
+      onClick={() => pupilHelpAction(id, help)}
+    >
       <Image
         className="m-0"
-        src="/help.png"
+        src="/help1.png"
         priority
-        width={50}
-        height={50}
+        width={150}
+        height={150}
         alt=""
       />
     </button>
