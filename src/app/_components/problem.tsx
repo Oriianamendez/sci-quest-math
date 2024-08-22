@@ -4,7 +4,7 @@ import { updatePupilAction } from "@/actions";
 
 export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   const currentProblem = problems.find(
-    (problem) => !pupil.answers.includes(problem.id),
+    (problem) => !pupil.answers.includes(problem.id)
   );
 
   if (!currentProblem) return "Finished";
@@ -17,7 +17,9 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   //if (pupil.points >= problems.length) return <p>Finished.</p>;
   return (
     <>
-      <p className="text-lg">{currentProblem.problem}</p>
+      <p className="text-justify text-4xl p-8 lg:w-3/5">
+        {currentProblem.problem}
+      </p>
       <form action={correctAnswer} className="flex gap-2">
         <input
           name="answer"
@@ -27,7 +29,7 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
         />
         <button
           type="submit"
-          className="bg-slate-700 text-white hover:bg-slate-600 p-2 rounded-md"
+          className="bg-sky-700 text-white hover:bg-sky-600 p-2 rounded-md"
         >
           Check
         </button>

@@ -20,16 +20,19 @@ export default async function PupilPage({
   const problems = await getProblemsByCategoryAction(categoryId);
 
   return (
-    <div className="w-full flex flex-row justify-center gap-8 p-4">
-      <div className="flex flex-col items-center">
-        <h2>{pupil.name}</h2>
+    <>
+      <div className="w-full flex flex-row gap-8">
+        <div className="flex flex-col items-start bg-sky-100 m-0 pl-6 w-40">
+          <HelpButton id={params.id} help={pupil.help} />
+          <CategoryMenu />
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <h2 className="text-6xl py-10 m-0">{pupil.name}</h2>
 
-        <HelpButton id={params.id} help={pupil.help} />
-        <PointsBar answers={pupil.answers} problems={problems} />
-        <Problem problems={problems} pupil={pupil} />
+          <PointsBar answers={pupil.answers} problems={problems} />
+          <Problem problems={problems} pupil={pupil} />
+        </div>
       </div>
-
-      <CategoryMenu />
-    </div>
+    </>
   );
 }
