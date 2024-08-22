@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Main } from "./_components/main";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 /* eslint-disable react/no-unescaped-entities */
 export default async function Home() {
@@ -15,12 +16,18 @@ export default async function Home() {
           height={40}
           alt=""
         />
-        <Link
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        {/* <Link
           href={"/dashboard"}
           className="border bg-sky-300 rounded-md p-2 no-underline"
         >
           Teacher
-        </Link>
+        </Link> */}
       </nav>
       <header className="flex flex-col items-center w-full md:flex-row md:pt-16 md:pb-20">
         <div className="md:flex md:items-center md:flex-col">
