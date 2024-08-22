@@ -1,6 +1,7 @@
-import { addPupilAction, getPupilsAction } from "@/actions";
+import { getPupilsAction } from "@/actions";
 import { Pupil } from "@/types";
 import dynamic from "next/dynamic";
+import { AddPupilForm } from "../_components/add-pupil-form";
 
 const PupilRow = dynamic(() => import("../_components/pupil-row"), {
   ssr: false,
@@ -34,17 +35,7 @@ export default async function Dashboard() {
           ))}
         </tbody>
       </table>
-      <form className="flex gap-4 w-fit" action={addPupilAction}>
-        <input
-          className="border border-sky-400 rounded-md p-2"
-          name="pupil"
-          type="text"
-          placeholder="Pupils name"
-        />
-        <button className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200">
-          Add
-        </button>
-      </form>
+      <AddPupilForm />
     </main>
   );
 }
