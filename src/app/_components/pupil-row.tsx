@@ -2,7 +2,7 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { HelpCounter } from "./help-counter";
 
-export function PupilRow({ pupil }: { pupil: any }) {
+export default function PupilRow({ pupil }: { pupil: any }) {
   if (!window) return <></>;
 
   return (

@@ -1,8 +1,13 @@
 import { addPupilAction, getPupilsAction } from "@/actions";
-import { PupilRow } from "../_components/pupil-row";
 import { Pupil } from "@/types";
+import dynamic from "next/dynamic";
+
+const PupilRow = dynamic(() => import("../_components/pupil-row"), {
+  ssr: false,
+});
 
 export const revalidate = 5;
+
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
 
