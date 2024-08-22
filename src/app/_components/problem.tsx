@@ -17,7 +17,7 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   //if (pupil.points >= problems.length) return <p>Finished.</p>;
   return (
     <>
-      <p className="text-justify text-4xl p-8 lg:w-3/5">
+      <p className="text-justify text-black font-extrabold text-7xl">
         {currentProblem.problem}
       </p>
       <form action={correctAnswer} className="flex gap-2">
@@ -29,7 +29,7 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
         />
         <button
           type="submit"
-          className="bg-sky-700 text-white hover:bg-sky-600 p-2 rounded-md"
+          className="bg-sky-200 hover:bg-sky-100 p-2 rounded-md"
         >
           Check
         </button>
