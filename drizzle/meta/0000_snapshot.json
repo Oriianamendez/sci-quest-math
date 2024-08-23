@@ -1,18 +1,62 @@
 {
-  "id": "528eec6f-cd20-44a5-b283-930b413f2f22",
+  "id": "c5c6ef99-9759-4339-91f0-90787cbcac0b",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
+    "public.answers": {
+      "name": "answers",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": true,
+          "notNull": true,
+          "default": "gen_random_uuid()"
+        },
+        "pupil_id": {
+          "name": "pupil_id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "problem_id": {
+          "name": "problem_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "answers_pupil_id_pupils_id_fk": {
+          "name": "answers_pupil_id_pupils_id_fk",
+          "tableFrom": "answers",
+          "tableTo": "pupils",
+          "columnsFrom": [
+            "pupil_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "public.pupils": {
       "name": "pupils",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "text",
+          "type": "uuid",
           "primaryKey": true,
-          "notNull": true
+          "notNull": true,
+          "default": "gen_random_uuid()"
         },
         "name": {
           "name": "name",
@@ -20,8 +64,14 @@
           "primaryKey": false,
           "notNull": true
         },
-        "password": {
-          "name": "password",
+        "help": {
+          "name": "help",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "teacher_id": {
+          "name": "teacher_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true
