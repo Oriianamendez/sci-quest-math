@@ -2,6 +2,8 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import * as schema from "./schema";
 import { Pupil } from "./types";
+import { eq } from "drizzle-orm";
+import { pupils } from "./schema";
 
 const url = process.env.POSTGRES_URL as string;
 
@@ -68,55 +70,58 @@ const mockPupils: Pupil[] = [
     id: "1",
     name: "Harald",
     help: 0,
-    answers: ["1", "2", "3", "4"],
+    teacherId: "1",
   },
   {
     id: "2",
     name: "Lukas",
     help: 0,
-    answers: [],
+    teacherId: "1",
   },
   {
     id: "3",
     name: "Oriana",
     help: 0,
-    answers: [],
+    teacherId: "1",
   },
 ];
 
 export async function getPupils() {
-  //return await db.query.pupils.findMany();
-  return await mockPupils;
+  return await db.query.pupils.findMany();
 }
 
 export async function getPupilById(id: string) {
-  //return await db.query.pupils.findMany();
-  return await mockPupils.find((pupil) => pupil.id == id);
+  return await db.query.pupils.findFirst({ where: eq(pupils.id, id) });
 }
 
 export async function updatePupil(id: string, problemId: string) {
+  // await db.insert(anwers).values({pupilId: id, problemId: problemId}).returning()
   let index = mockPupils.findIndex((pupil) => pupil.id == id);
   mockPupils[index].answers.push(problemId);
 
   return mockPupils[index];
 }
 export async function updateHelpTimestamp(id: string, help: number) {
-  let index = mockPupils.findIndex((pupil) => pupil.id == id);
-  mockPupils[index] = {
-    ...mockPupils[index],
-    help: help == 0 ? Number(new Date()) : 0,
-  };
+  return await db
+    .update(pupils)
+    .set({ help: help == 0 ? Number(new Date()) : 0 })
+    .where(eq(pupils.id, id))
+    .returning();
 
-  return mockPupils[index];
+  // let index = mockPupils.findIndex((pupil) => pupil.id == id);
+  // mockPupils[index] = {
+  //   ...mockPupils[index],
+  //   help: help == 0 ? Number(new Date()) : 0,
+  // };
+
+  // return mockPupils[index];
 }
 
-export async function addPupil(name: string) {
-  await mockPupils.push({
-    id: (mockPupils.length + 1).toString(),
-    name: name,
-    help: 0,
-    answers: [],
-  });
+export async function addPupil(name: string, teacherId: string) {
+  await db
+    .insert(pupils)
+    .values({ name: name, help: 0, teacherId: teacherId })
+    .returning();
 }
 
 export async function getProblemsByCategory(id: string) {

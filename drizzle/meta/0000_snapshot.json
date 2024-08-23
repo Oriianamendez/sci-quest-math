@@ -1,5 +1,5 @@
 {
-  "id": "c5c6ef99-9759-4339-91f0-90787cbcac0b",
+  "id": "b8781b66-ce31-4628-bc97-20a69a0b2659",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -66,7 +66,7 @@
         },
         "help": {
           "name": "help",
-          "type": "integer",
+          "type": "bigint",
           "primaryKey": false,
           "notNull": true
         },
@@ -75,6 +75,13 @@
           "type": "text",
           "primaryKey": false,
           "notNull": true
+        },
+        "answers": {
+          "name": "answers",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "('[\"tag1\", \"tag2\"]')"
         }
       },
       "indexes": {},

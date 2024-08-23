@@ -10,9 +10,9 @@ export default function PupilsTable() {
 
   useEffect(() => {
     const interval = setInterval(async () => {
-      const pupils = await getPupilsAction();
-      setPupils(pupils);
-      console.log(pupils);
+      const result = await getPupilsAction();
+      setPupils(result);
+      console.log(result);
     }, 1000);
     return () => clearInterval(interval);
   }, []);

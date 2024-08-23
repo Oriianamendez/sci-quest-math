@@ -22,7 +22,7 @@ export default function PupilRow({ pupil }: { pupil: any }) {
 
         {pupil.name}
       </td>
-      <td>{pupil.answers.length}</td>
+      <td>{pupil.answers}</td>
       <td>{pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}</td>
     </tr>
   );

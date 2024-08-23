@@ -38,6 +38,6 @@ export async function getProblemsByCategoryAction(id: string) {
 export async function addPupilAction(formData: FormData) {
   const { userId } = auth();
   console.log(userId);
-  await addPupil((formData.get("pupil") as string).trim());
+  await addPupil((formData.get("pupil") as string).trim(), userId!);
   revalidatePath("/dashboard");
 }

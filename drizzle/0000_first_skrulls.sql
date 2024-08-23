@@ -7,8 +7,9 @@ CREATE TABLE IF NOT EXISTS "answers" (
 CREATE TABLE IF NOT EXISTS "pupils" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"name" text NOT NULL,
-	"help" integer NOT NULL,
-	"teacher_id" text NOT NULL
+	"help" bigint NOT NULL,
+	"teacher_id" text NOT NULL,
+	"answers" jsonb DEFAULT ('["tag1", "tag2"]') NOT NULL
 );
 --> statement-breakpoint
 DO $$ BEGIN
