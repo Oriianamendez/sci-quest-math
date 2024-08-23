@@ -46,14 +46,14 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
           <button
             type="button"
             disabled
-            className="bg-sky-200 hover:bg-sky-100 p-2 rounded-md"
+            className="bg-sky-200 hover:bg-sky-100 text-black p-2 rounded-md"
           >
             Loading
           </button>
         ) : (
           <button
             type="submit"
-            className="bg-sky-200 hover:bg-sky-100 p-2 rounded-md"
+            className="bg-sky-200 hover:bg-sky-100 text-black p-2 rounded-md"
           >
             Check
           </button>

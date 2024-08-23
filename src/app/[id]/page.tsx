@@ -33,7 +33,7 @@ export default async function PupilPage({
           <Problem problems={problems} pupil={pupil} />
         </div>
       </section>
-      <section className="lg:w-1/3 flex flex-col items-center pt-4 pr-2 lg:gap-12 lg:pt-32">
+      <section className="lg:w-1/3 flex flex-col items-center pt-4 pr-4 lg:gap-12 lg:pt-32">
         <HelpButton id={params.id} help={pupil.help} />
       </section>
     </main>

@@ -18,6 +18,14 @@ export function CategoryMenu() {
     <aside
       className={`${concert.className} flex flex-col text-7xl gap-8 p-4 pt-6`}
     >
+      <Image
+        className="m-0 size-12 ml-4 lg:ml-8"
+        src="/logo.png"
+        priority
+        width={50}
+        height={50}
+        alt=""
+      />
       <button
         className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("1")}
