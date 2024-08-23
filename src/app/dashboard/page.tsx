@@ -1,11 +1,14 @@
 import { addPupilAction, getPupilsAction } from "@/actions";
 import { Pupil } from "@/types";
+import { SignedIn, SignOutButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import dynamic from "next/dynamic";
 
 const PupilRow = dynamic(() => import("../_components/pupil-row"), {
   ssr: false,
 });
-
+const userId = auth();
+console.log(userId);
 export const revalidate = 5;
 
 export default async function Dashboard() {
@@ -20,6 +23,9 @@ export default async function Dashboard() {
 
   return (
     <main className="flex flex-col w-full items-center p-8 bg-sky-100">
+      <SignedIn>
+        <SignOutButton />
+      </SignedIn>
       <table className="p-4 w-2/5">
         <thead className="text-xl">
           <tr>

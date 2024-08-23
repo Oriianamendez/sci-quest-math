@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Main } from "./_components/main";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignOutButton,
+  UserButton,
+} from "@clerk/nextjs";
 
 /* eslint-disable react/no-unescaped-entities */
 export default async function Home() {
@@ -20,7 +26,7 @@ export default async function Home() {
           <SignInButton />
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <SignOutButton />
         </SignedIn>
         {/* <Link
           href={"/dashboard"}

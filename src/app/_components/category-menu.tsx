@@ -12,7 +12,6 @@ export function CategoryMenu() {
     params.set("category", id);
     router.push(pathName + "?" + params);
   }
-
   return (
     <aside
       className={`${concert.className} flex flex-col text-7xl gap-8 text-white`}
