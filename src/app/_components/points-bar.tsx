@@ -13,18 +13,18 @@ export function PointsBar({
         answers.includes(problem.id) ? (
           <div
             key={problem.id}
-            className="bg-emerald-600 text-white rounded-full size-6 flex items-center"
+            className="bg-green-500 text-white rounded-full size-10 flex items-center justify-center"
           >
             <CheckIcon />
           </div>
         ) : (
           <div
             key={problem.id}
-            className="bg-neutral-500 rounded-full size-6"
+            className="bg-neutral-500 rounded-full size-10"
           />
-        ),
+        )
       )}
-      <div className="text-3xl bg-emerald-600 text-white size-10 rounded-full flex items-center justify-center">
+      <div className="text-3xl bg-green-500 text-white size-14 rounded-full flex items-center justify-center">
         {answers.length}
       </div>
     </div>

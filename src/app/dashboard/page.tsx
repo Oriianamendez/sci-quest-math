@@ -1,8 +1,11 @@
-import { addPupilAction, getPupilsAction } from "@/actions";
+import { getPupilsAction } from "@/actions";
 import { Pupil } from "@/types";
 import { SignedIn, SignOutButton } from "@clerk/nextjs";
 import { auth } from "@clerk/nextjs/server";
 import dynamic from "next/dynamic";
+import { AddPupilForm } from "../_components/add-pupil-form";
+import Image from "next/image";
+import Link from "next/link";
 
 const PupilRow = dynamic(() => import("../_components/pupil-row"), {
   ssr: false,
@@ -22,35 +25,39 @@ export default async function Dashboard() {
   });
 
   return (
-    <main className="flex flex-col w-full items-center p-8 bg-sky-100">
-      <SignedIn>
+
+    <>
+      <nav className="bg-sky-100 p-4 flex justify-between align-middle">
+        <Image
+          className="m-0 size-12"
+          src="/logo.png"
+          priority
+          width={50}
+          height={50}
+          alt=""
+
+        />
+        <SignedIn>
         <SignOutButton />
       </SignedIn>
-      <table className="p-4 w-2/5">
-        <thead className="text-xl">
-          <tr>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Help</th>
-          </tr>
-        </thead>
-        <tbody className="text-lg">
-          {pupils.map((pupil) => (
-            <PupilRow pupil={pupil} key={pupil.id} />
-          ))}
-        </tbody>
-      </table>
-      <form className="flex gap-4 w-fit" action={addPupilAction}>
-        <input
-          className="border border-sky-400 rounded-md p-2"
-          name="pupil"
-          type="text"
-          placeholder="Pupils name"
-        />
-        <button className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200">
-          Add
-        </button>
-      </form>
-    </main>
+      </nav>
+      <main className="flex flex-col w-full items-center p-8 bg-sky-100">
+        <table className="p-4 w-2/5">
+          <thead className="text-xl">
+            <tr>
+              <th>Name</th>
+              <th>Points</th>
+              <th>Help</th>
+            </tr>
+          </thead>
+          <tbody className="text-lg">
+            {pupils.map((pupil) => (
+              <PupilRow pupil={pupil} key={pupil.id} />
+            ))}
+          </tbody>
+        </table>
+        <AddPupilForm />
+      </main>
+    </>
   );
 }

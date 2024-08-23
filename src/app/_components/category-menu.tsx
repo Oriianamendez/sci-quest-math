@@ -1,6 +1,7 @@
 "use client";
 import { Concert_One } from "next/font/google";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const concert = Concert_One({ weight: ["400"], subsets: ["latin"] });
 export function CategoryMenu() {
@@ -14,25 +15,63 @@ export function CategoryMenu() {
   }
   return (
     <aside
-      className={`${concert.className} flex flex-col text-7xl gap-8 text-white`}
+      className={`${concert.className} flex flex-col text-7xl gap-8 p-4 pt-6`}
     >
+      <Image
+        className="m-0 size-12 ml-4 lg:ml-8"
+        src="/logo.png"
+        priority
+        width={50}
+        height={50}
+        alt=""
+      />
       <button
-        className="bg-sky-300 size-20 flex items-center justify-center rounded-lg"
+        className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("1")}
       >
-        +
+        <Image
+          className="m-0"
+          src="/symbols/+.png"
+          width={70}
+          height={70}
+          alt=""
+        />
       </button>
       <button
-        className="bg-sky-300 size-20 flex items-center justify-center rounded-lg"
+        className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("2")}
       >
-        -
+        <Image
+          className="m-0"
+          src="/symbols/-.png"
+          width={70}
+          height={70}
+          alt=""
+        />
       </button>
       <button
-        className="bg-sky-300 size-20 flex items-center justify-center rounded-lg"
+        className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("3")}
       >
-        ?
+        <Image
+          className="m-0"
+          src="/symbols/question-mark.png"
+          width={70}
+          height={70}
+          alt=""
+        />
+      </button>
+      <button
+        className="flex items-center justify-center rounded-lg"
+        onClick={() => setCategory("4")}
+      >
+        <Image
+          className="m-0"
+          src="/symbols/question-mark.png"
+          width={70}
+          height={70}
+          alt=""
+        />
       </button>
     </aside>
   );
