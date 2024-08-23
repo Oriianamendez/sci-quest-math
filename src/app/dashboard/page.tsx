@@ -6,8 +6,6 @@ import { AddPupilForm } from "../_components/add-pupil-form";
 import Image from "next/image";
 import PupilsTable from "../_components/pupils-table";
 
-const userId = auth();
-
 export default async function Dashboard() {
   const pupils = await getPupilsAction();
 

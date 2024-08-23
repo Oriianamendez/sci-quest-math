@@ -9,6 +9,7 @@ import {
   updateHelpTimestamp,
   updatePupil,
 } from "./queries";
+import { auth } from "@clerk/nextjs/server";
 
 export async function getPupilsAction() {
   return await getPupils();
@@ -35,6 +36,8 @@ export async function getProblemsByCategoryAction(id: string) {
 }
 
 export async function addPupilAction(formData: FormData) {
+  const { userId } = auth();
+  console.log(userId);
   await addPupil((formData.get("pupil") as string).trim());
   revalidatePath("/dashboard");
 }
