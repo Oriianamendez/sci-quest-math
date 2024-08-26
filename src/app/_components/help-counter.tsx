@@ -12,14 +12,17 @@ export function HelpCounter({ help }: { help: number }) {
   }, []);
 
   const waitedTime = new Date(Number(time) - help);
+  const minutes = waitedTime.getMinutes();
+  const seconds = waitedTime.getSeconds();
 
   return (
     <div
-      className="bg-red-400 rounded-md p-2 text-white"
+      className="bg-red-400 rounded-md p-2 text-white w-24 text-center"
       suppressHydrationWarning
     >
-      {" "}
-      {waitedTime.getMinutes() + ":" + waitedTime.getSeconds()}
+      {(minutes < 10 ? "0" + minutes : minutes) +
+        ":" +
+        (seconds < 10 ? "0" + seconds : seconds)}
     </div>
   );
 }
