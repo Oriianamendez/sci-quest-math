@@ -27,10 +27,19 @@ export default function PupilsTable() {
   });
 
   return (
-    <tbody className="text-lg">
-      {pupils.map((pupil: Pupil) => (
-        <PupilRow pupil={pupil} key={pupil.id} />
-      ))}
-    </tbody>
+    <table className="p-4 w-2/5">
+      <thead className="text-xl">
+        <tr>
+          <th>Name</th>
+          <th>Points</th>
+          <th>Help</th>
+        </tr>
+      </thead>
+      <tbody className="text-lg">
+        {pupils.map((pupil: Pupil) => (
+          <PupilRow pupil={pupil} key={pupil.id} />
+        ))}
+      </tbody>
+    </table>
   );
 }

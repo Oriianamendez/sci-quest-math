@@ -25,16 +25,7 @@ export default async function Dashboard() {
         </SignedIn>
       </nav>
       <main className="flex flex-col w-full items-center p-8 bg-sky-100">
-        <table className="p-4 w-2/5">
-          <thead className="text-xl">
-            <tr>
-              <th>Name</th>
-              <th>Points</th>
-              <th>Help</th>
-            </tr>
-          </thead>
-          <PupilsTable />
-        </table>
+        <PupilsTable />
         <AddPupilForm />
       </main>
     </>
