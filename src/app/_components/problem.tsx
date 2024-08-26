@@ -54,8 +54,10 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
           <button
             type="button"
             disabled
-            className={`bg-sky-200 hover:bg-sky-100 text-black p-2 w-20 rounded-md ${
-              wrongAnswer && "bg-red-600 text-white hover:bg-red-600"
+            className={`p-2 w-20 rounded-md ${
+              wrongAnswer
+                ? "bg-red-600 text-white hover:bg-red-600"
+                : "bg-sky-200 hover:bg-sky-100 text-black"
             }`}
           >
             {wrongAnswer ? <CloseIcon /> : "Loading"}
