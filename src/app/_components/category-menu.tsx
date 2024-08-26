@@ -55,7 +55,7 @@ export function CategoryMenu() {
       >
         <Image
           className="m-0"
-          src="/symbols/question-mark.png"
+          src="/symbols/question+.png"
           width={70}
           height={70}
           alt="Question mark symbol"
@@ -67,7 +67,7 @@ export function CategoryMenu() {
       >
         <Image
           className="m-0"
-          src="/symbols/question-mark.png"
+          src="/symbols/question-.png"
           width={70}
           height={70}
           alt="Question mark symbol"
