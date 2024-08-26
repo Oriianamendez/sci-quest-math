@@ -1,6 +1,7 @@
 "use client";
 
 import { addPupilAction } from "@/actions";
+import { toast } from "@/components/ui/use-toast";
 import { useRef } from "react";
 
 export function AddPupilForm() {
@@ -22,7 +23,14 @@ export function AddPupilForm() {
         type="text"
         placeholder="Pupils name"
       />
-      <button className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200">
+      <button
+        className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200"
+        onClick={() => {
+          toast({
+            description: "Pupil added!",
+          });
+        }}
+      >
         Add
       </button>
     </form>
