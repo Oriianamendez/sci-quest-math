@@ -18,7 +18,7 @@ export default async function Dashboard() {
           priority
           width={50}
           height={50}
-          alt=""
+          alt="Logo of SciQuest Math"
         />
         <SignedIn>
           <SignOutButton />

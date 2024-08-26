@@ -23,7 +23,7 @@ export function CategoryMenu() {
         priority
         width={50}
         height={50}
-        alt=""
+        alt="Logo of SciQuest Math"
       />
       <button
         className="flex items-center justify-center rounded-lg"
@@ -34,7 +34,7 @@ export function CategoryMenu() {
           src="/symbols/+.png"
           width={70}
           height={70}
-          alt=""
+          alt="Plus symbol"
         />
       </button>
       <button
@@ -46,7 +46,7 @@ export function CategoryMenu() {
           src="/symbols/-.png"
           width={70}
           height={70}
-          alt=""
+          alt="Minus symbol"
         />
       </button>
       <button
@@ -58,7 +58,7 @@ export function CategoryMenu() {
           src="/symbols/question-mark.png"
           width={70}
           height={70}
-          alt=""
+          alt="Question mark symbol"
         />
       </button>
       <button
@@ -70,7 +70,7 @@ export function CategoryMenu() {
           src="/symbols/question-mark.png"
           width={70}
           height={70}
-          alt=""
+          alt="Question mark symbol"
         />
       </button>
     </aside>

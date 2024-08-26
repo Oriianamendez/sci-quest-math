@@ -15,7 +15,7 @@ export function HelpButton({ id, help }: { id: string; help: number }) {
         priority
         width={150}
         height={150}
-        alt=""
+        alt="A hand to ask for help"
       />
     </button>
   );

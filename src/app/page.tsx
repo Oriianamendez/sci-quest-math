@@ -20,7 +20,7 @@ export default async function Home() {
           priority
           width={50}
           height={50}
-          alt=""
+          alt="Logo of SciQuest Math"
         />
         <SignedOut>
           <SignInButton />
@@ -52,7 +52,7 @@ export default async function Home() {
             priority
             width={700}
             height={700}
-            alt=""
+            alt="Big books, teacher and students"
           />
         </div>
       </header>
