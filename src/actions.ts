@@ -13,7 +13,6 @@ import { auth } from "@clerk/nextjs/server";
 
 export async function getPupilsAction() {
   const { userId } = auth();
-  console.log(await getPupils(userId!));
   return await getPupils(userId!);
 }
 
@@ -39,7 +38,6 @@ export async function getProblemsByCategoryAction(id: string) {
 
 export async function addPupilAction(formData: FormData) {
   const { userId } = auth();
-  console.log(userId);
   await addPupil((formData.get("pupil") as string).trim(), userId!);
   revalidatePath("/dashboard");
 }

@@ -19,7 +19,6 @@ export default function PupilsTable() {
     const interval = setInterval(async () => {
       const result = await getPupilsAction();
       setPupils(result as Pupil[]);
-      console.log(result);
     }, 1000);
     return () => clearInterval(interval);
   }, []);
