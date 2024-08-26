@@ -29,7 +29,7 @@ export default async function PupilPage({
           <h2 className="absolute top-4 left-32 lg:top-0 lg:left-40 text-4xl pl-6 pt-6 m-0">
             {pupil.name}
           </h2>
-          <PointsBar answers={pupil.answers} problems={problems} />
+          <PointsBar answers={pupil.answers as string[]} problems={problems} />
           <Problem problems={problems} pupil={pupil} />
         </div>
       </section>

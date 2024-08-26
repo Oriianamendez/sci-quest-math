@@ -3,4 +3,5 @@ export type Pupil = {
   name: string;
   help: number;
   teacherId: string;
+  answers: string[];
 };

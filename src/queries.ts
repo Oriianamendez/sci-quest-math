@@ -78,7 +78,9 @@ export async function getPupilById(id: string) {
 
 export async function updatePupil(id: string, problemId: string) {
   // await db.insert(anwers).values({pupilId: id, problemId: problemId}).returning()
-  const pupilAnswers = await getPupilById(id).then((res) => res?.answers);
+  const pupilAnswers: string[] = await getPupilById(id).then(
+    (res) => res?.answers as string[]
+  );
   await db
     .update(pupils)
     .set({ answers: [...pupilAnswers, problemId] })
