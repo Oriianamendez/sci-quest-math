@@ -14,14 +14,14 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
 
   function correctAnswer(formData: FormData) {
     setFormLoading(true);
-    if ((formData.get("answer") as string) == currentProblem.solution) {
-      setTimeout(() => {
+    setTimeout(() => {
+      if ((formData.get("answer") as string) == currentProblem.solution) {
         updatePupilAction(pupil.id, currentProblem.id);
-        setFormLoading(false);
-        formRef.current?.reset();
-        return;
-      }, 1000);
-    }
+      }
+      setFormLoading(false);
+      formRef.current?.reset();
+      return;
+    }, 1000);
   }
 
   return (
