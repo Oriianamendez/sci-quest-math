@@ -65,26 +65,6 @@ const mockProblems = [
     solution: 6,
   },
 ];
-const mockPupils: Pupil[] = [
-  {
-    id: "1",
-    name: "Harald",
-    help: 0,
-    teacherId: "1",
-  },
-  {
-    id: "2",
-    name: "Lukas",
-    help: 0,
-    teacherId: "1",
-  },
-  {
-    id: "3",
-    name: "Oriana",
-    help: 0,
-    teacherId: "1",
-  },
-];
 
 export async function getPupils() {
   return await db.query.pupils.findMany();
@@ -96,10 +76,16 @@ export async function getPupilById(id: string) {
 
 export async function updatePupil(id: string, problemId: string) {
   // await db.insert(anwers).values({pupilId: id, problemId: problemId}).returning()
-  let index = mockPupils.findIndex((pupil) => pupil.id == id);
-  mockPupils[index].answers.push(problemId);
+  const pupilAnswers = await getPupilById(id).then((res) => res?.answers);
+  await db
+    .update(pupils)
+    .set({ answers: [...pupilAnswers, problemId] })
+    .where(eq(pupils.id, id));
 
-  return mockPupils[index];
+  // let index = mockPupils.findIndex((pupil) => pupil.id == id);
+  // mockPupils[index].answers.push(problemId);
+
+  // return mockPupils[index];
 }
 export async function updateHelpTimestamp(id: string, help: number) {
   return await db
@@ -107,14 +93,6 @@ export async function updateHelpTimestamp(id: string, help: number) {
     .set({ help: help == 0 ? Number(new Date()) : 0 })
     .where(eq(pupils.id, id))
     .returning();
-
-  // let index = mockPupils.findIndex((pupil) => pupil.id == id);
-  // mockPupils[index] = {
-  //   ...mockPupils[index],
-  //   help: help == 0 ? Number(new Date()) : 0,
-  // };
-
-  // return mockPupils[index];
 }
 
 export async function addPupil(name: string, teacherId: string) {
