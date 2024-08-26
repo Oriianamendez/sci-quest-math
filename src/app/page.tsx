@@ -6,6 +6,7 @@ import {
   SignInButton,
   SignOutButton,
 } from "@clerk/nextjs";
+import ClerkButtons from "@/components/ui/clerk-buttons";
 
 /* eslint-disable react/no-unescaped-entities */
 export default async function Home() {
@@ -20,12 +21,16 @@ export default async function Home() {
           height={50}
           alt="Logo of SciQuest Math"
         />
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <SignOutButton />
-        </SignedIn>
+        <ClerkButtons />
+        {/* <div className="border bg-sky-300 rounded-md p-2 w-28">
+          <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <SignOutButton />
+          </SignedIn>
+        </div> */}
+
         {/* <Link
           href={"/dashboard"}
           className="border bg-sky-300 rounded-md p-2 no-underline"
