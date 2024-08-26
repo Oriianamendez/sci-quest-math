@@ -24,7 +24,7 @@ export default function PupilsTable() {
     return () => clearInterval(interval);
   }, []);
 
-  if (!pupils) return <tbody>No pupils found</tbody>;
+  if (!pupils) return <TableBody>No pupils found</TableBody>;
 
   pupils.sort((a: Pupil, b: Pupil) => {
     if (a.help == 0) return 1;
@@ -34,12 +34,12 @@ export default function PupilsTable() {
   });
 
   return (
-    <Table className="p-4 w-full">
+    <Table className="p-4 w-3/5 mx-auto">
       <TableHeader className="text-xl">
         <TableRow>
-          <TableHead className="w-[100px]">Name</TableHead>
-          <TableHead>Points</TableHead>
-          <TableHead>Help</TableHead>
+          <TableHead className="w-1/3">Name</TableHead>
+          <TableHead className="w-1/3">Points</TableHead>
+          <TableHead className="w-1/3">Help</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody className="text-lg">

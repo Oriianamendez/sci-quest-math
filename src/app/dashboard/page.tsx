@@ -24,7 +24,7 @@ export default async function Dashboard() {
           <SignOutButton />
         </SignedIn>
       </nav>
-      <div className="flex flex-col w-full items-center p-8 bg-sky-100">
+      <div className="flex flex-col items-center p-8 bg-sky-100">
         <PupilsTable />
         <AddPupilForm />
       </div>
