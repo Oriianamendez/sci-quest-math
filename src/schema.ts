@@ -1,4 +1,4 @@
-import { relations, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 import { bigint, jsonb, pgTable, text, uuid } from "drizzle-orm/pg-core";
 
 export const pupils = pgTable("pupils", {

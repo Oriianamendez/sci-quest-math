@@ -1,7 +1,6 @@
 "use server";
 import { getPupilsAction } from "@/actions";
 import { SignedIn, SignOutButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
 import { AddPupilForm } from "../_components/add-pupil-form";
 import Image from "next/image";
 import PupilsTable from "../_components/pupils-table";

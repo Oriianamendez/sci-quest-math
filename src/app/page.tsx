@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Main } from "./_components/main";
 import {
@@ -6,7 +5,6 @@ import {
   SignedOut,
   SignInButton,
   SignOutButton,
-  UserButton,
 } from "@clerk/nextjs";
 
 /* eslint-disable react/no-unescaped-entities */
