@@ -66,8 +66,10 @@ const mockProblems = [
   },
 ];
 
-export async function getPupils() {
-  return await db.query.pupils.findMany();
+export async function getPupils(teacherId: string) {
+  return await db.query.pupils.findMany({
+    where: eq(pupils.teacherId, teacherId),
+  });
 }
 
 export async function getPupilById(id: string) {

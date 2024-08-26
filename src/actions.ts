@@ -12,7 +12,9 @@ import {
 import { auth } from "@clerk/nextjs/server";
 
 export async function getPupilsAction() {
-  return await getPupils();
+  const { userId } = auth();
+  console.log(await getPupils(userId!));
+  return await getPupils(userId!);
 }
 
 export async function getPupilByIdAction(id: string) {
