@@ -11,7 +11,7 @@ export default function PupilsTable() {
   useEffect(() => {
     const interval = setInterval(async () => {
       const result = await getPupilsAction();
-      setPupils(result);
+      setPupils(result as Pupil[]);
       console.log(result);
     }, 1000);
     return () => clearInterval(interval);
