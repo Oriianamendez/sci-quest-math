@@ -7,11 +7,16 @@ import Image from "next/image";
 export function HelpButton({ id, help }: { id: string; help: number }) {
   return (
     <button
-      className="rounded-full p-4 bg-neutral-500 hover:bg-green-500"
+      className={`rounded-full p-4 ${
+        help != 0
+          ? "hover:bg-green-400 bg-green-500"
+          : "hover:bg-neutral-400 bg-neutral-500 "
+      } transition-colors`}
       onClick={() => {
         pupilHelpAction(id, help),
           toast({
-            description: "Help is on the way!",
+            description:
+              help == 0 ? "Help is on the way!" : "I changed my mind!",
           });
       }}
     >
