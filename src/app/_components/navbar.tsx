@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <nav className="px-4 flex justify-between align-middle">
+    <nav className="md:px-4 flex justify-between align-middle">
       <Link href={"/"}>
         <Image
           className="m-0 size-12"
@@ -20,7 +20,7 @@ export function Navbar() {
         <SignedIn>
           <Link
             href={"/dashboard"}
-            className="flex w-24 items-center justify-center  rounded-md border-[1px] border-black"
+            className="flex w-24 items-center justify-center rounded-md border-[1px] border-black"
           >
             Teacher
           </Link>
