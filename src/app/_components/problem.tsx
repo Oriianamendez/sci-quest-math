@@ -33,8 +33,8 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   }
 
   return (
-    <>
-      <p className="text-justify text-black font-extrabold text-2xl py-8 lg:text-4-xl">
+    <div className="flex flex-col gap-8 items-center">
+      <p className="text-justify text-black font-bold max-w-full text-3xl py-8 lg:text-4-xl">
         {currentProblem.problem}
       </p>
       <form
@@ -48,7 +48,7 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
           name="answer"
           type="number"
           placeholder="Answer"
-          className="border border-black rounded-md p-2"
+          className="border border-black rounded-md p-2 w-full"
         />
         {formLoading ? (
           <button
@@ -71,6 +71,6 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
           </button>
         )}
       </form>
-    </>
+    </div>
   );
 }

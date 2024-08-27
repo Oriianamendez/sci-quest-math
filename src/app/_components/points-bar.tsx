@@ -7,6 +7,7 @@ export function PointsBar({
   problems: any[];
   answers: string[];
 }) {
+  console.log();
   return (
     <div className="flex gap-1 items-center">
       {problems.map((problem) =>
@@ -24,9 +25,9 @@ export function PointsBar({
           />
         )
       )}
-      <div className="text-3xl bg-green-500 text-white size-14 rounded-full flex items-center justify-center">
-        {answers.length}
-      </div>
+      {/* <div className="text-3xl bg-green-500 text-white size-14 rounded-full flex items-center justify-center">
+        {problems.filter((problem) => answers.includes(problem.id)).length}
+      </div> */}
     </div>
   );
 }
