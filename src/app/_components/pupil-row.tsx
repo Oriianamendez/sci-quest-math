@@ -31,7 +31,7 @@ export default function PupilRow({ pupil }: { pupil: Pupil }) {
       </TableCell>
       <TableCell>
         <button
-          className="bg-red-400 text-white px-4 py-2 rounded-md"
+          className="bg-red-400 text-white px-4 py-2 rounded-md transition-colors hover:bg-red-500"
           onClick={() => deletePupilAction(pupil.id)}
         >
           Delete
