@@ -33,15 +33,15 @@ export default function PupilsTable() {
   });
 
   return (
-    <Table className="p-4 w-3/5 mx-auto">
-      <TableHeader className="text-xl">
+    <Table className="md:p-4 w-3/5 mx-auto">
+      <TableHeader className="text-lg md:text-xl">
         <TableRow>
           <TableHead className="w-1/3">Name</TableHead>
           <TableHead className="w-1/3">Points</TableHead>
           <TableHead className="w-1/3">Help</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody className="text-lg">
+      <TableBody className="md:text-lg">
         {pupils.map((pupil: Pupil) => (
           <PupilRow pupil={pupil} key={pupil.id} />
         ))}

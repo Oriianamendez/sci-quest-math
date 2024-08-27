@@ -9,7 +9,7 @@ export default async function Dashboard() {
     <div className="bg-sky-100 h-screen">
       <Main>
         <Navbar />
-        <div className="flex flex-col items-center p-8">
+        <div className="flex flex-col items-center py-8 md:p-8">
           <PupilsTable />
           <AddPupilForm />
         </div>
