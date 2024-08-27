@@ -4,7 +4,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 
 const concert = Concert_One({ weight: ["400"], subsets: ["latin"] });
-export function CategoryMenu() {
+
+export function CategoryMenu({ categoryId }: { categoryId: string }) {
   const searchParams = useSearchParams();
   const pathName = usePathname();
   const router = useRouter();
@@ -13,12 +14,13 @@ export function CategoryMenu() {
     params.set("category", id);
     router.push(pathName + "?" + params);
   }
+
   return (
     <aside
-      className={`${concert.className} flex flex-col gap-4 p-2 md:p-4 pt-6`}
+      className={`${concert.className} flex flex-col text-7xl gap-4 p-4 pt-6 items-center`}
     >
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "1" && "bg-sky-200"}`}
         onClick={() => setCategory("1")}
       >
         <Image
@@ -30,7 +32,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "2" && "bg-sky-200"}`}
         onClick={() => setCategory("2")}
       >
         <Image
@@ -42,7 +44,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "3" && "bg-sky-200"}`}
         onClick={() => setCategory("3")}
       >
         <Image
@@ -54,7 +56,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "4" && "bg-sky-200"}`}
         onClick={() => setCategory("4")}
       >
         <Image
@@ -66,7 +68,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "5" && "bg-sky-200"}`}
         onClick={() => setCategory("5")}
       >
         <Image
@@ -78,7 +80,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "6" && "bg-sky-200"}`}
         onClick={() => setCategory("6")}
       >
         <Image
@@ -90,7 +92,7 @@ export function CategoryMenu() {
         />
       </button>
       <button
-        className="flex items-center justify-center"
+        className={`w-fit rounded-lg ${categoryId == "7" && "bg-sky-200"}`}
         onClick={() => setCategory("7")}
       >
         <Image
