@@ -6,7 +6,7 @@ import { Main } from "../_components/main";
 
 export default async function Dashboard() {
   return (
-    <div className="bg-sky-100">
+    <div className="bg-sky-100 h-screen">
       <Main>
         <Navbar />
         <div className="flex flex-col items-center p-8">
