@@ -1,43 +1,18 @@
 import Image from "next/image";
 import { Main } from "./_components/main";
+import { Navbar } from "./_components/navbar";
 import {
   SignedIn,
   SignedOut,
   SignInButton,
   SignOutButton,
 } from "@clerk/nextjs";
-import ClerkButtons from "@/components/ui/clerk-buttons";
 
 /* eslint-disable react/no-unescaped-entities */
 export default async function Home() {
   return (
     <Main>
-      <nav className="px-4 flex justify-between align-middle">
-        <Image
-          className="m-0 size-12"
-          src="/logo.png"
-          priority
-          width={50}
-          height={50}
-          alt="Logo of SciQuest Math"
-        />
-        <ClerkButtons />
-        {/* <div className="border bg-sky-300 rounded-md p-2 w-28">
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <SignOutButton />
-          </SignedIn>
-        </div> */}
-
-        {/* <Link
-          href={"/dashboard"}
-          className="border bg-sky-300 rounded-md p-2 no-underline"
-        >
-          Teacher
-        </Link> */}
-      </nav>
+      <Navbar />
       <header className="flex flex-col items-center w-full md:flex-row md:pt-16 md:pb-20">
         <div className="md:flex md:items-center md:flex-col">
           <h1 className="text-5xl pt-12 text-sky-900 md:text-7xl text-center">
