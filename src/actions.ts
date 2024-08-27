@@ -5,7 +5,7 @@ import {
   addPupil,
   getProblemsByCategory,
   getPupilById,
-  getPupils,
+  getPupilsByTeacherId,
   updateHelpTimestamp,
   updatePupil,
 } from "./queries";
@@ -13,7 +13,9 @@ import { auth } from "@clerk/nextjs/server";
 
 export async function getPupilsAction() {
   const { userId } = auth();
-  return await getPupils(userId!);
+  if (!userId) return;
+
+  return await getPupilsByTeacherId(userId);
 }
 
 export async function getPupilByIdAction(id: string) {
