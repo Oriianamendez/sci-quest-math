@@ -22,7 +22,7 @@ export default async function PupilPage({
   return (
     <main className="flex bg-yellow-300">
       <section className="static flex flex-col bg-sky-100 md:w-40 md:pt-4 h-svh">
-        <CategoryMenu />
+        <CategoryMenu categoryId={categoryId} />
       </section>
       <section className="md:w-full lg:max-w-2xl lg:mx-auto gap-8 flex flex-col items-center">
         <div className="self-start flex items-center gap-2 p-4">
