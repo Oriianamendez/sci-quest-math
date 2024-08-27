@@ -4,6 +4,7 @@ import * as schema from "./schema";
 import { eq } from "drizzle-orm";
 import { pupils } from "./schema";
 import { problems } from "./problems";
+import { Pupil } from "./types";
 
 const url = process.env.POSTGRES_URL as string;
 
@@ -17,7 +18,9 @@ export async function getPupils(teacherId: string) {
 }
 
 export async function getPupilById(id: string) {
-  return await db.query.pupils.findFirst({ where: eq(pupils.id, id) });
+  return (await db.query.pupils.findFirst({
+    where: eq(pupils.id, id),
+  })) as Pupil;
 }
 
 export async function updatePupil(id: string, problemId: string) {
