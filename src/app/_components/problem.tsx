@@ -3,6 +3,7 @@
 import { updatePupilAction } from "@/actions";
 import { useRef, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import StarBorderIcon from "@mui/icons-material/StarBorder";
 
 export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   const formRef = useRef<HTMLFormElement>(null);
@@ -10,10 +11,15 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   const [wrongAnswer, setWrongAnswer] = useState(false);
 
   const currentProblem = problems.find(
-    (problem) => !pupil.answers.includes(problem.id)
+    (problem) => !pupil.answers.includes(problem.id),
   );
 
-  if (!currentProblem) return "Finished";
+  if (!currentProblem)
+    return (
+      <p className="bg-yellow-200 p-2 rounded-md text-center">
+        You’re a math superstar! 🤩
+      </p>
+    );
 
   function correctAnswer(formData: FormData) {
     setFormLoading(true);
