@@ -21,18 +21,18 @@ export default async function PupilPage({
 
   return (
     <main className="flex bg-yellow-300">
-      <section className="static flex flex-col bg-sky-100 w-40 h-svh">
+      <section className="static flex flex-col bg-sky-100 md:w-40 h-svh">
         <CategoryMenu />
       </section>
-      <section className="w-full lg:max-w-2xl lg:mx-auto gap-8 flex flex-col items-center">
+      <section className="md:w-full lg:max-w-2xl lg:mx-auto gap-8 flex flex-col items-center">
         <div className="self-start flex items-center gap-2 p-4">
-          <div className="text-5xl bg-yellow-200 size-20 rounded-full flex items-center justify-center">
-            {pupil.answers.length}
+          <div className="text-4xl md:text-5xl bg-yellow-200 size-16 md:size-20 rounded-full flex items-center justify-center">
+            {(pupil.answers as string[]).length}
           </div>
           <h2 className="text-4xl">{pupil.name}</h2>
         </div>
-        <div className="flex gap-8 items-start p-8">
-          <div className="flex flex-col gap-8 max-w-min">
+        <div className="flex gap-8 items-start p-2 md:p-8">
+          <div className="flex flex-col md:gap-8 max-w-min">
             <PointsBar
               answers={pupil.answers as string[]}
               problems={problems}

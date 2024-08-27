@@ -7,7 +7,7 @@ import Image from "next/image";
 export function HelpButton({ id, help }: { id: string; help: number }) {
   return (
     <button
-      className={`rounded-full p-4 ${
+      className={`rounded-full p-2 md:p-4 ${
         help != 0
           ? "hover:bg-green-400 bg-green-500"
           : "hover:bg-neutral-400 bg-neutral-500 "
@@ -21,7 +21,7 @@ export function HelpButton({ id, help }: { id: string; help: number }) {
       }}
     >
       <Image
-        className="m-0"
+        className="m-0 size-10 md:size-28"
         src="/help.png"
         priority
         width={150}

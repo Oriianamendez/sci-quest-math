@@ -10,21 +10,21 @@ export function PointsBar({
 }) {
   console.log();
   return (
-    <div className="flex gap-1 items-center">
+    <div className="flex gap-1 justify-center items-center">
       {problems.map((problem) =>
         answers.includes(problem.id) ? (
           <div
             key={problem.id}
-            className="bg-green-500 text-white rounded-full size-10 flex items-center justify-center"
+            className="bg-green-500 text-white rounded-full size-6 md:size-10 flex items-center justify-center"
           >
             <CheckIcon />
           </div>
         ) : (
           <div
             key={problem.id}
-            className="bg-neutral-500 rounded-full size-10"
+            className="bg-neutral-500 rounded-full size-6 md:size-10"
           />
-        ),
+        )
       )}
     </div>
   );

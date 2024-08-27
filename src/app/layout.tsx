@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${inter.className} prose max-w-full`}>
+        <body className={`${inter.className} prose md:max-w-full`}>
           {children}
           <Toaster />
         </body>
