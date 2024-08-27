@@ -21,7 +21,7 @@ export default async function PupilPage({
 
   return (
     <main className="flex bg-yellow-300">
-      <section className="static flex flex-col bg-sky-100 md:w-40 h-svh">
+      <section className="static flex flex-col bg-sky-100 md:w-40 md:pt-4 h-svh">
         <CategoryMenu />
       </section>
       <section className="md:w-full lg:max-w-2xl lg:mx-auto gap-8 flex flex-col items-center">
@@ -29,7 +29,10 @@ export default async function PupilPage({
           <div className="text-4xl md:text-5xl bg-yellow-200 size-16 md:size-20 rounded-full flex items-center justify-center">
             {(pupil.answers as string[]).length}
           </div>
-          <h2 className="text-4xl">{pupil.name}</h2>
+          <h2 className="text-4xl pr-8">{pupil.name}</h2>
+          <div className="md:hidden">
+            <HelpButton id={params.id} help={pupil.help} />
+          </div>
         </div>
         <div className="flex gap-8 items-start p-2 md:p-8">
           <div className="flex flex-col md:gap-8 max-w-min">
@@ -39,7 +42,9 @@ export default async function PupilPage({
             />
             <Problem problems={problems} pupil={pupil} />
           </div>
-          <HelpButton id={params.id} help={pupil.help} />
+          <div className="md:pt-16 lg:pt-10 hidden md:block">
+            <HelpButton id={params.id} help={pupil.help} />
+          </div>
         </div>
       </section>
     </main>

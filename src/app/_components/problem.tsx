@@ -17,7 +17,7 @@ export function Problem({
   const [wrongAnswer, setWrongAnswer] = useState(false);
 
   const currentProblem = problems.find(
-    (problem) => !pupil.answers.includes(problem.id),
+    (problem) => !pupil.answers.includes(problem.id)
   );
 
   if (!currentProblem)
@@ -47,7 +47,7 @@ export function Problem({
 
   return (
     <div className="flex flex-col gap-8 items-center">
-      <p className="text-justify text-black font-bold max-w-full text-3xl py-8 lg:text-4-xl">
+      <p className="text-justify text-black font-bold max-w-full text-xl md:text-3xl pt-10 md:py-8 lg:text-4-xl">
         {currentProblem.problem}
       </p>
       <form
@@ -59,7 +59,7 @@ export function Problem({
       >
         <input
           name="answer"
-          type="number"
+          type="tel"
           placeholder="Answer"
           className="border border-black rounded-md p-2 w-full"
         />

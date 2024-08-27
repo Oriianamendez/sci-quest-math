@@ -21,7 +21,7 @@ export function HelpButton({ id, help }: { id: string; help: number }) {
       }}
     >
       <Image
-        className="m-0 size-10 md:size-28"
+        className="m-0 size-12 md:size-16 lg:size-28"
         src="/help.png"
         priority
         width={150}
