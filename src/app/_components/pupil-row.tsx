@@ -3,6 +3,7 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { HelpCounter } from "./help-counter";
 import { TableCell, TableRow } from "@/components/ui/table";
 import { Pupil } from "@/types";
+import { deletePupilAction } from "@/actions";
 
 export default function PupilRow({ pupil }: { pupil: Pupil }) {
   if (!window) return <></>;
@@ -27,6 +28,14 @@ export default function PupilRow({ pupil }: { pupil: Pupil }) {
       <TableCell>{pupil.answers.length}</TableCell>
       <TableCell>
         {pupil.help == 0 ? "" : <HelpCounter help={pupil.help} />}
+      </TableCell>
+      <TableCell>
+        <button
+          className="bg-red-400 text-white px-4 py-2 rounded-md"
+          onClick={() => deletePupilAction(pupil.id)}
+        >
+          Delete
+        </button>
       </TableCell>
     </TableRow>
   );

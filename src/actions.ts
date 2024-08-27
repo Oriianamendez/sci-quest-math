@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import {
   addPupil,
+  deletePupil,
   getProblemsByCategory,
   getPupilById,
   getPupilsByTeacherId,
@@ -41,5 +42,9 @@ export async function getProblemsByCategoryAction(id: string) {
 export async function addPupilAction(formData: FormData) {
   const { userId } = auth();
   await addPupil((formData.get("pupil") as string).trim(), userId!);
+  revalidatePath("/dashboard");
+}
+export async function deletePupilAction(id: string) {
+  await deletePupil(id);
   revalidatePath("/dashboard");
 }
