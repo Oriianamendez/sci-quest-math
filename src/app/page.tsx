@@ -1,12 +1,6 @@
 import Image from "next/image";
 import { Main } from "./_components/main";
 import { Navbar } from "./_components/navbar";
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  SignOutButton,
-} from "@clerk/nextjs";
 
 /* eslint-disable react/no-unescaped-entities */
 export default async function Home() {
