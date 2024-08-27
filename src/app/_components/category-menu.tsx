@@ -15,23 +15,15 @@ export function CategoryMenu() {
   }
   return (
     <aside
-      className={`${concert.className} flex flex-col text-7xl gap-8 p-4 pt-6`}
+      className={`${concert.className} flex flex-col text-7xl gap-4 p-4 pt-6`}
     >
-      <Image
-        className="m-0 size-12 ml-4 lg:ml-8"
-        src="/logo.png"
-        priority
-        width={50}
-        height={50}
-        alt="Logo of SciQuest Math"
-      />
       <button
         className="flex items-center justify-center rounded-lg"
         onClick={() => setCategory("1")}
       >
         <Image
           className="m-0"
-          src="/symbols/+.png"
+          src="/symbols/+easy.png"
           width={70}
           height={70}
           alt="Plus symbol"
@@ -43,7 +35,7 @@ export function CategoryMenu() {
       >
         <Image
           className="m-0"
-          src="/symbols/-.png"
+          src="/symbols/+medium.png"
           width={70}
           height={70}
           alt="Minus symbol"
@@ -55,7 +47,7 @@ export function CategoryMenu() {
       >
         <Image
           className="m-0"
-          src="/symbols/question+.png"
+          src="/symbols/+difficult.png"
           width={70}
           height={70}
           alt="Question mark symbol"
@@ -67,7 +59,43 @@ export function CategoryMenu() {
       >
         <Image
           className="m-0"
-          src="/symbols/question-.png"
+          src="/symbols/-easy.png"
+          width={70}
+          height={70}
+          alt="Question mark symbol"
+        />
+      </button>
+      <button
+        className="flex items-center justify-center rounded-lg"
+        onClick={() => setCategory("5")}
+      >
+        <Image
+          className="m-0"
+          src="/symbols/-medium.png"
+          width={70}
+          height={70}
+          alt="Question mark symbol"
+        />
+      </button>
+      <button
+        className="flex items-center justify-center rounded-lg"
+        onClick={() => setCategory("6")}
+      >
+        <Image
+          className="m-0"
+          src="/symbols/-difficult.png"
+          width={70}
+          height={70}
+          alt="Question mark symbol"
+        />
+      </button>
+      <button
+        className="flex items-center justify-center rounded-lg"
+        onClick={() => setCategory("7")}
+      >
+        <Image
+          className="m-0"
+          src="/symbols/question-mark.png"
           width={70}
           height={70}
           alt="Question mark symbol"
