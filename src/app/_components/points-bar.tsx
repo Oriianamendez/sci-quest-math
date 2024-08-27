@@ -1,10 +1,11 @@
+import { Problem } from "@/types";
 import CheckIcon from "@mui/icons-material/Check";
 
 export function PointsBar({
   problems,
   answers,
 }: {
-  problems: any[];
+  problems: Problem[];
   answers: string[];
 }) {
   console.log();
@@ -23,11 +24,8 @@ export function PointsBar({
             key={problem.id}
             className="bg-neutral-500 rounded-full size-10"
           />
-        )
+        ),
       )}
-      {/* <div className="text-3xl bg-green-500 text-white size-14 rounded-full flex items-center justify-center">
-        {problems.filter((problem) => answers.includes(problem.id)).length}
-      </div> */}
     </div>
   );
 }

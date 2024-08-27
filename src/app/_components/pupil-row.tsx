@@ -2,8 +2,9 @@
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { HelpCounter } from "./help-counter";
 import { TableCell, TableRow } from "@/components/ui/table";
+import { Pupil } from "@/types";
 
-export default function PupilRow({ pupil }: { pupil: any }) {
+export default function PupilRow({ pupil }: { pupil: Pupil }) {
   if (!window) return <></>;
 
   return (
@@ -14,7 +15,7 @@ export default function PupilRow({ pupil }: { pupil: any }) {
           className="flex justify-center size-6 items-center text-sm p-2 rounded-full bg-neutral-100   hover:bg-neutral-50 "
           onClick={() =>
             navigator.clipboard.writeText(
-              `${window.location.origin}/${pupil.id}`
+              `${window.location.origin}/${pupil.id}`,
             )
           }
         >

@@ -5,3 +5,10 @@ export type Pupil = {
   teacherId: string;
   answers: string[];
 };
+
+export type Problem = {
+  id: string;
+  categoryId: string;
+  problem: string;
+  solution: number;
+};

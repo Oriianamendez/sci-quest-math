@@ -3,9 +3,15 @@
 import { updatePupilAction } from "@/actions";
 import { useRef, useState } from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
+import { Pupil, Problem as ProblemType } from "@/types";
 
-export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
+export function Problem({
+  problems,
+  pupil,
+}: {
+  problems: ProblemType[];
+  pupil: Pupil;
+}) {
   const formRef = useRef<HTMLFormElement>(null);
   const [formLoading, setFormLoading] = useState(false);
   const [wrongAnswer, setWrongAnswer] = useState(false);
@@ -17,14 +23,15 @@ export function Problem({ problems, pupil }: { problems: any[]; pupil: any }) {
   if (!currentProblem)
     return (
       <p className="bg-yellow-200 p-2 rounded-md text-center">
-        You’re a math superstar! 🤩
+        You are a math superstar! 🤩
       </p>
     );
 
   function correctAnswer(formData: FormData) {
     setFormLoading(true);
-    if ((formData.get("answer") as string) == currentProblem.solution) {
-      updatePupilAction(pupil.id, currentProblem.id);
+
+    if (Number(formData.get("answer")) == currentProblem!.solution) {
+      updatePupilAction(pupil.id, currentProblem!.id);
     } else {
       setWrongAnswer(true);
       return setTimeout(() => {
