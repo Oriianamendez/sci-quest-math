@@ -39,7 +39,9 @@ export default function PupilsTable() {
           <TableHead className="w-1/3 md:w-1/4">Name</TableHead>
           <TableHead className="w-1/3 md:w-1/4">Points</TableHead>
           <TableHead className="w-1/3 md:w-1/4">Help</TableHead>
-          <TableHead className="w-1/4 insivible md:visible">Delete</TableHead>
+          <TableHead className="w-1/4 hidden md:flex items-center align-middle">
+            Delete
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody className="md:text-lg">
