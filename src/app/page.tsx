@@ -28,8 +28,8 @@ export default async function Home() {
           />
         </div>
       </header>
-      <article className="text-justify md:flex md:justify-evenly px-2">
-        <section className="bg-white p-4 md:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
+      <article className="text-justify lg:flex md:justify-evenly px-2">
+        <section className="bg-white p-4 lg:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
           <h2 className="mt-2 md:text-3xl text-green-600">For teacher</h2>
           <p>
             Our app empowers teachers with easy-to-use management tools.
@@ -41,7 +41,7 @@ export default async function Home() {
           </p>
           <p className="text-7xl flex justify-center m-0">🧑🏼‍🏫</p>
         </section>
-        <section className="bg-white p-4 md:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
+        <section className="bg-white p-4 lg:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
           <h2 className="mt-2 md:text-3xl text-yellow-500">In the classroom</h2>
           <p>
             Our Math Practice App is designed to be a seamless addition to the
@@ -54,7 +54,7 @@ export default async function Home() {
           <br />
           <p className="text-7xl flex justify-center m-0">🎒</p>
         </section>
-        <section className="bg-white p-4 md:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
+        <section className="bg-white p-4 lg:w-1/3 md:px-8 text-sky-950 border-2 rounded-xl m-2">
           <h2 className="mt-2 md:text-3xl text-blue-600">For students</h2>
           <p>
             Students are provided with an interactive and enjoyable way to
