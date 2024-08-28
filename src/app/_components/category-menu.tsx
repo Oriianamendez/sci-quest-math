@@ -15,94 +15,39 @@ export function CategoryMenu({ categoryId }: { categoryId: string }) {
     router.push(pathName + "?" + params);
   }
 
+  const categoryArr = [
+    { id: "1", src: "/symbols/+easy.png", alt: "Green plus symbol" },
+    { id: "2", src: "/symbols/+medium.png", alt: "Yellow plus symbol" },
+    { id: "3", src: "/symbols/+difficult.png", alt: "Red plus symbol" },
+    { id: "4", src: "/symbols/-easy.png", alt: "Green minus symbol" },
+    { id: "5", src: "/symbols/-medium.png", alt: "Yellow minus symbol" },
+    { id: "6", src: "/symbols/-difficult.png", alt: "Red minus symbol" },
+    { id: "7", src: "/symbols/question-mark.png", alt: "Question mark symbol" },
+  ];
+
   return (
     <aside
       className={`${concert.className} flex flex-col text-7xl gap-4 p-4 pt-6 items-center`}
     >
-      <button
-        className={`w-fit rounded-lg ${categoryId == "1" && "bg-sky-200"}`}
-        onClick={() => setCategory("1")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/+easy.png"
-          width={70}
-          height={70}
-          alt="Green plus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "2" && "bg-sky-200"}`}
-        onClick={() => setCategory("2")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/+medium.png"
-          width={70}
-          height={70}
-          alt="Yellow plus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "3" && "bg-sky-200"}`}
-        onClick={() => setCategory("3")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/+difficult.png"
-          width={70}
-          height={70}
-          alt="Red plus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "4" && "bg-sky-200"}`}
-        onClick={() => setCategory("4")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/-easy.png"
-          width={70}
-          height={70}
-          alt="Green minus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "5" && "bg-sky-200"}`}
-        onClick={() => setCategory("5")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/-medium.png"
-          width={70}
-          height={70}
-          alt="Yellow minus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "6" && "bg-sky-200"}`}
-        onClick={() => setCategory("6")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/-difficult.png"
-          width={70}
-          height={70}
-          alt="Red minus symbol"
-        />
-      </button>
-      <button
-        className={`w-fit rounded-lg ${categoryId == "7" && "bg-sky-200"}`}
-        onClick={() => setCategory("7")}
-      >
-        <Image
-          className="m-0 size-10 md:size-16"
-          src="/symbols/question-mark.png"
-          width={70}
-          height={70}
-          alt="Question mark symbol"
-        />
-      </button>
+      {categoryArr.map((category, i) => {
+        return (
+          <button
+            key={i}
+            className={`w-fit rounded-lg ${
+              categoryId == category.id && "bg-sky-200"
+            }`}
+            onClick={() => setCategory(category.id)}
+          >
+            <Image
+              className="m-0 size-10 md:size-16"
+              src={category.src}
+              width={70}
+              height={70}
+              alt={category.alt}
+            />
+          </button>
+        );
+      })}
     </aside>
   );
 }
