@@ -47,7 +47,7 @@ export function Problem({
 
   return (
     <div className="flex flex-col gap-8 items-center">
-      <p className="text-justify text-black font-bold max-w-full text-xl md:text-3xl pt-10 md:py-8 lg:text-4-xl">
+      <p className="text-justify text-black font-bold max-w-full text-lg md:text-3xl pt-6 md:py-8 lg:text-4-xl">
         {currentProblem.problem}
       </p>
       <form

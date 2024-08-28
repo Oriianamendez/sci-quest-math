@@ -10,7 +10,7 @@ export function PointsBar({
 }) {
   console.log();
   return (
-    <div className="flex gap-1 justify-center items-center">
+    <div className="flex gap-1 justify-center items-center pb-4">
       {problems.map((problem) =>
         answers.includes(problem.id) ? (
           <div

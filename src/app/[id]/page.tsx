@@ -26,7 +26,7 @@ export default async function PupilPage({
       </section>
       <section className="md:w-full lg:max-w-2xl lg:mx-auto gap-8 flex flex-col items-center">
         <div className="self-start flex items-center gap-2 p-4">
-          <div className="text-4xl md:text-5xl bg-yellow-200 size-16 md:size-20 rounded-full flex items-center justify-center">
+          <div className="text-3xl md:text-5xl bg-yellow-200 size-14 md:size-20 rounded-full flex items-center justify-center">
             {(pupil.answers as string[]).length}
           </div>
           <h2 className="text-4xl pr-8">{pupil.name}</h2>
@@ -42,7 +42,7 @@ export default async function PupilPage({
             />
             <Problem problems={problems} pupil={pupil} />
           </div>
-          <div className="md:pt-16 lg:pt-10 hidden md:block">
+          <div className="md:pt-32 lg:pt-28 hidden md:block">
             <HelpButton id={params.id} help={pupil.help} />
           </div>
         </div>
