@@ -9,7 +9,7 @@ export function AddPupilForm() {
 
   return (
     <form
-      className="flex gap-4 w-fit"
+      className="flex gap-4 w-fit p-4"
       action={async (formData) => {
         addPupilAction(formData);
         inputRef.current!.value = "";
