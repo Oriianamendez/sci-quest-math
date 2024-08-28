@@ -8,7 +8,6 @@ export function PointsBar({
   problems: Problem[];
   answers: string[];
 }) {
-  console.log();
   return (
     <div className="flex gap-1 justify-center items-center pb-4">
       {problems.map((problem) =>
@@ -26,7 +25,7 @@ export function PointsBar({
           >
             <CheckIcon />
           </div>
-        )
+        ),
       )}
     </div>
   );

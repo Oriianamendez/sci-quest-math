@@ -10,11 +10,3 @@ export const pupils = pgTable("pupils", {
     .notNull()
     .default(sql`('["tag1", "tag2"]')`),
 });
-
-export const answers = pgTable("answers", {
-  id: uuid("id").notNull().primaryKey().defaultRandom(),
-  pupilId: uuid("pupil_id")
-    .references(() => pupils.id)
-    .notNull(),
-  problemId: text("problem_id").notNull(),
-});

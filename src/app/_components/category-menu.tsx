@@ -1,9 +1,6 @@
 "use client";
-import { Concert_One } from "next/font/google";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
-
-const concert = Concert_One({ weight: ["400"], subsets: ["latin"] });
 
 export function CategoryMenu({ categoryId }: { categoryId: string }) {
   const searchParams = useSearchParams();
@@ -26,9 +23,7 @@ export function CategoryMenu({ categoryId }: { categoryId: string }) {
   ];
 
   return (
-    <aside
-      className={`${concert.className} flex flex-col text-7xl gap-4 p-4 pt-6 items-center`}
-    >
+    <aside className={`flex flex-col text-7xl gap-4 p-4 pt-6 items-center`}>
       {categoryArr.map((category, i) => {
         return (
           <button
