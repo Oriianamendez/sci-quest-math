@@ -15,19 +15,19 @@ export function CategoryLegend() {
           <div className="rounded-full bg-yellow-400 size-5" />
           <strong>Yellow</strong>
         </div>
-        Moderate difficulty. Subtraction problems contain three numbers, and
-        addition problems have the numbers switched around.
+        Medium - Subtraction with three numbers, and smaller numbers comes first
+        in addition.
       </div>
       <div className="flex flex-col gap-2 p-4 bg-slate-100/75 basis-1/4 rounded-lg">
         <div className="flex gap-2 items-center">
           <div className="rounded-full bg-red-500 size-5" />
           <strong>Red</strong>
         </div>
-        Hard - Contains solutions above 10, designed for advanced users.
+        Hard - Contains results above 10.
       </div>
       <div className="flex flex-col gap-2 p-4 bg-slate-100/75 basis-1/4 rounded-lg">
         <strong>?</strong>
-        Includes math problems in text. Contains subtraction and addition.
+        Includes math problems in text.
       </div>
     </div>
   );
