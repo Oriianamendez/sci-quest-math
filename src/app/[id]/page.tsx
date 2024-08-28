@@ -42,7 +42,7 @@ export default async function PupilPage({
             />
             <Problem problems={problems} pupil={pupil} />
           </div>
-          <div className="md:pt-32 lg:pt-28 hidden md:block">
+          <div className="md:pt-24 lg:pt-16 hidden md:block">
             <HelpButton id={params.id} help={pupil.help} />
           </div>
         </div>

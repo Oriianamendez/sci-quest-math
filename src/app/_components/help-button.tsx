@@ -16,7 +16,7 @@ export function HelpButton({ id, help }: { id: string; help: number }) {
         pupilHelpAction(id, help),
           toast({
             description:
-              help == 0 ? "Help is on the way!" : "I changed my mind!",
+              help == 0 ? "Help is on the way!" : "Good job, keep practicing!",
           });
       }}
     >
