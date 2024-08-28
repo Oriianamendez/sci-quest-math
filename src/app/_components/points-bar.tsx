@@ -22,8 +22,10 @@ export function PointsBar({
         ) : (
           <div
             key={problem.id}
-            className="bg-neutral-500 rounded-full size-6 md:size-10"
-          />
+            className="bg-neutral-500 text-white opacity-80 text-opacity-80 rounded-full size-6 md:size-10  flex items-center justify-center"
+          >
+            <CheckIcon />
+          </div>
         )
       )}
     </div>
