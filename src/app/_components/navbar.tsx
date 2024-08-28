@@ -1,9 +1,14 @@
+"use client";
+
 import { SignedIn } from "@clerk/nextjs";
 import ClerkButtons from "./clerk-buttons";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+  const pathname = usePathname();
+
   return (
     <nav className="md:px-4 flex justify-between align-middle">
       <Link href={"/"}>
@@ -18,12 +23,16 @@ export function Navbar() {
       </Link>
       <div className="flex gap-10">
         <SignedIn>
-          <Link
-            href={"/dashboard"}
-            className="flex w-24 items-center justify-center rounded-md border-[1px] border-black"
-          >
-            Teacher
-          </Link>
+          {pathname !== "/dashboard" ? (
+            <Link
+              href={"/dashboard"}
+              className="flex w-24 items-center justify-center rounded-md border-[1px] border-black"
+            >
+              Teacher
+            </Link>
+          ) : (
+            ""
+          )}
         </SignedIn>
         <ClerkButtons />
       </div>
