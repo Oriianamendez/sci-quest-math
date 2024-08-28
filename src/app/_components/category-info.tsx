@@ -1,7 +1,7 @@
-export function CategoryLegend() {
+export function CategoryInfo() {
   return (
     <div className="flex-col gap-3 basis-1/4 rounded-lg py-2 hidden md:flex">
-      <h2 className="text-xl text-slate-500">Category Legend</h2>
+      <h2 className="text-xl text-slate-500">Category Info</h2>
 
       <div className="flex flex-col gap-2 p-4 bg-slate-100/75">
         <div className="flex gap-2 items-center">

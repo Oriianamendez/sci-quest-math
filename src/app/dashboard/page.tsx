@@ -3,7 +3,7 @@ import { AddPupilForm } from "../_components/add-pupil-form";
 import PupilsTable from "../_components/pupils-table";
 import { Navbar } from "../_components/navbar";
 import { Main } from "../_components/main";
-import { CategoryLegend } from "../_components/category-legend";
+import { CategoryInfo } from "../_components/category-info";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 export default async function Dashboard() {
@@ -13,7 +13,7 @@ export default async function Dashboard() {
         <Navbar />
         <SignedIn>
           <div className="flex justify-around pt-6">
-            <CategoryLegend />
+            <CategoryInfo />
             <div className="flex flex-col items-center basis-5/6 h-[75vh]">
               <PupilsTable />
               <AddPupilForm />
