@@ -17,7 +17,7 @@ export function Problem({
   const [wrongAnswer, setWrongAnswer] = useState(false);
 
   const currentProblem = problems.find(
-    (problem) => !pupil.answers.includes(problem.id),
+    (problem) => !pupil.answers.includes(problem.id)
   );
 
   if (!currentProblem)
@@ -78,7 +78,7 @@ export function Problem({
         ) : (
           <button
             type="submit"
-            className="bg-sky-200 hover:bg-sky-100 text-black p-2 w-20 rounded-md"
+            className="bg-sky-200 hover:bg-sky-100 text-black p-2 w-20 rounded-md transition-colors"
           >
             Check
           </button>

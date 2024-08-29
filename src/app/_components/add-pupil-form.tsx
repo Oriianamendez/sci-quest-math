@@ -24,7 +24,7 @@ export function AddPupilForm() {
         placeholder="Pupils name"
       />
       <button
-        className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200"
+        className="border border-sky-400 rounded-md py-2 px-4 bg-sky-300 hover:bg-sky-200 transition-colors"
         onClick={() => {
           toast({
             description: "Pupil added!",

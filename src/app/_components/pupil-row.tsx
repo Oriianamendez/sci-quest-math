@@ -12,7 +12,7 @@ export default function PupilRow({ pupil }: { pupil: Pupil }) {
         <div className="flex flex-row items-center gap-2">
           <button
             title={`${window.location.origin}/${pupil.id}`}
-            className="flex justify-center size-6 items-center text-sm p-2 rounded-full bg-neutral-100   hover:bg-neutral-50 "
+            className="flex justify-center size-6 items-center text-sm p-2 rounded-full bg-neutral-100 hover:bg-neutral-50 transition-colors"
             onClick={() =>
               navigator.clipboard.writeText(
                 `${window.location.origin}/${pupil.id}`
